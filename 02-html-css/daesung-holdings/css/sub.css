@@ -1,0 +1,36 @@
+/*reset*/
+footer {
+    margin-top: 0;
+}
+
+#sub_int,
+#sub_part {
+    color: #666;
+    width: 100%;
+}
+
+/* sub*/
+.sub_visual {
+    background: url(../images/sub/visual1.jpg)no-repeat center top;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#sub_part .sub_cont >p {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.6vw;
+}
+#sub_part .sub_cont ul li p span {
+    color: #c44a50;
+}
+
+.sub_cont ul li p span {
+    color: #076da8;
+    font-weight: 600;
+}

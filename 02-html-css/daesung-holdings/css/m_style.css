@@ -1,0 +1,939 @@
+/* 모바일, 태블릿용 */
+@media (max-width:960px) {
+    .pc {
+        display: none;
+    }
+    html {
+    width: 100%;
+    overflow-x:hidden;
+    }
+
+    .wrap {
+        width: 100%;
+    }
+
+
+    /* header & footer  */
+    h1 {
+        position: fixed;
+        width: 100%;
+        line-height: 60px;
+        text-align: left;
+        padding-left: 20px;
+        background: rgba(238, 238, 238, 0.9);
+        z-index: 999;
+    }
+
+    header {
+        height: 60px;
+        position: fixed;
+        background: transparent;
+        top: 0;
+        right: 40px;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    header .htop {
+        height: 100%;
+    }
+
+    header .htop > a {
+        width: 28px;
+    }
+
+    header .mob img {
+        height: 20px;
+        margin-top: 6px;
+    }
+
+    h1 .mob img {
+        height: 24px;
+        margin-bottom: 10px;
+    }
+
+    footer {
+        font-size: max(min(24px, 3.3vw), 14px);
+        font-weight: 100;
+        text-align: center;
+    }
+
+    footer .wrap > a {
+
+        float: none;
+        display: block;
+        line-height: 100px;
+        height: 100px;
+        width: 100%;
+
+    }
+
+    footer .snb {
+        position: static;
+        height: auto;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    footer .snb li a:after {
+        content: "|";
+        margin: 0 10px;
+        font-size: 12px;
+    }
+
+    footer .snb li:last-child a:after {
+        display: none;
+    }
+
+    footer address {
+        float: none;
+        line-height: 1.6;
+        margin: 20px 0 0 40px;
+    }
+
+
+
+    /*  index  */
+
+    #visual {
+        width: 100%;
+        height: 100vw;
+        max-height: 1080px;
+        min-height: 540px;
+        background: url(../images/main/m_visual1.jpg) no-repeat center 30%;
+        background-size: cover;
+
+    }
+
+    #visual article {
+        position: absolute;
+        top: max(170px, 40vw);
+        left: 0;
+        width: 100%;
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+        height: inherit;
+        padding: 80px 0 80px 40px;
+        font-size: 16px;
+        color: #fff;
+        background: rgba(7, 109, 168, 0.4) linear-gradient(-45deg, rgba(7, 109, 168, 1) 0%, rgba(47, 172, 245, 0.7) 100%);
+
+    }
+
+    #visual article h3 {
+        font-size: 30px;
+    }
+
+    #visual article > a {
+        font-size: 16px;
+        color: #ddd;
+        padding-left: 0;
+    }
+
+    #visual figure {
+        padding-left: 30px;
+        margin-top: 0px;
+        position: absolute;
+        top: max(500px, 90vw);
+        bottom: 0;
+    }
+
+    #visual figure img {
+        padding-right: 20px;
+        height: 15px;
+    }
+
+    #visual figure img:last-child {
+        padding-right: 0;
+    }
+
+
+    #intro {
+        margin: 0 5vw
+    }
+
+    #intro h3 {
+        font-size: max(5vw, 36px);
+    }
+
+    #intro h3:before {
+        height: 6px;
+        top: 65px;
+    }
+
+    #intro ul {
+        display: block;
+    }
+
+    #intro ul li {
+        width: 42.5vw;
+        max-width: inherit;
+        height: 42.5vw;
+        max-height: inherit;
+        margin-bottom: 5vw;
+    }
+
+    #intro ul li:nth-child(odd) {
+        margin-right: 5vw;
+    }
+
+    #intro ul li a p {
+        font-size: max(min(24px, 4vw), 12px);
+    }
+
+    #intro ul li a:link,
+    #intro ul li a:visited {
+        transition: 0.3s
+    }
+
+    #intro ul li a:hover,
+    #intro ul li a:active,
+    #intro ul li a:focus {
+        color: #eaeaea;
+    }
+
+    #intro ul li:nth-child(1) a {
+        background: #fafafa url(../images/main/icon1.png) no-repeat center top/70%;
+        background-origin: content-box;
+
+    }
+
+    #intro ul li:nth-child(2) a {
+        background: #fafafa url(../images/main/icon2.png) no-repeat center top/70%;
+        background-origin: content-box;
+
+    }
+
+    #intro ul li:nth-child(3) a {
+        background: #fafafa url(../images/main/icon3.png) no-repeat center top/60%;
+        background-origin: content-box;
+
+    }
+
+    #intro ul li:nth-child(4) a {
+        background: #fafafa url(../images/main/icon4.png) no-repeat center top/70%;
+        background-origin: content-box;
+
+    }
+
+    #intro ul li:nth-child(1) a:hover,
+    #intro ul li:nth-child(1) a:active,
+    #intro ul li :nth-child(1) a:focus {
+        background: #7e7e7e url(../images/main/icon1-1.png) no-repeat center top/70%;
+        background-origin: content-box;
+
+    }
+
+    #intro ul li:nth-child(2) a:hover,
+    #intro ul li:nth-child(2) a:active,
+    #intro ul li:nth-child(2) a:focus {
+        background: #7e7e7e url(../images/main/icon2-1.png) no-repeat center top/70%;
+        background-origin: content-box;
+
+    }
+
+    #intro ul li:nth-child(3) a:hover,
+    #intro ul li:nth-child(3) a:active,
+    #intro ul li:nth-child(3) a:focus {
+        background: #7e7e7e url(../images/main/icon3-1.png) no-repeat center top/60%;
+        background-origin: content-box;
+
+    }
+
+    #intro ul li:nth-child(4) a:hover,
+    #intro ul li a:nth-child(4):active,
+    #intro ul li:nth-child(4) a:focus {
+        background: #7e7e7e url(../images/main/icon4-1.png) no-repeat center top/70%;
+        background-origin: content-box;
+
+    }
+
+    #esg {
+        margin-top: 80px;
+        height: 610px;
+    }
+
+    #esg .wrap {
+        max-width: 1200px;
+        width: 100vw;
+    }
+
+    #esg h3 {
+        font-size: min(30px, 6vw);
+    }
+
+    #esg p {
+        margin-top: min(40px, 5vw);
+        font-size: min(max(16px, 4vw), 24px)
+    }
+
+
+    #esg .wrap > a i {
+        display: block;
+        position: absolute;
+        top: inherit;
+        bottom: calc(10% - 10px);
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    #esg .wrap > a .lkey {
+        left: calc(50% - 80px);
+    }
+
+    #esg .wrap > a .rkey {
+        right: calc(50% - 80px);
+    }
+
+    #news > div {
+        border-top: none;
+        border-bottom: none;
+        padding-top: 0;
+    }
+
+    #news h3 {
+        font-size: max(5vw, 36px);
+        color: #333;
+
+    }
+
+    #news h3:before {
+        height: 6px;
+        top: 65px;
+    }
+
+    #news ul {
+        width: 450vw;
+        max-width: none;
+    }
+
+    #news ul li {
+        width: 80vw;
+        max-width: 600px;
+        margin: 0 5vw;
+        background: #fafafa;
+
+    }
+
+    #news ul .pick {
+        width: 80vw;
+        padding: 0;
+        padding-top: 5vw;
+        max-width: none;
+        float: left;
+        margin-bottom: auto;
+        white-space: normal;
+        max-width: 600px;
+        border: 1px solid #ddd;
+
+    }
+
+    #news ul .pick a div {
+        width: 100%;
+        height: min(364px, 54vw);
+        background: url(../images/main/news1.jpg)no-repeat center top/contain;
+    }
+
+    #news ul .pick p {
+        font-size: max(min(4vw, 30px), 18px);
+        color: #333;
+        margin: 5vw;
+    }
+
+    #news ul .pick span {
+        font-size: max(min(3vw, 24px), 14px);
+        margin-top: 0;
+        font-weight: 400;
+        margin: 5vw;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        white-space: normal;
+
+    }
+
+    #news ul .newsli {
+        width: 80vw;
+        float: left;
+        padding: 0;
+        padding-top: 5vw;
+        border-bottom: none;
+        max-width: 600px;
+        border: 1px solid #ddd;
+
+    }
+
+    #news ul .newsli:last-child {
+        border: 1px solid #ddd;
+    }
+
+    #news ul .newsli a div {
+        width: 100%;
+        height: min(364px, 54vw);
+        margin: 0;
+        width: auto;
+        float: none;
+    }
+
+    #news ul .newsli p {
+        font-size: max(min(4vw, 30px), 18px);
+        color: #333;
+        margin: 5vw;
+        font-weight: 400;
+        float: none;
+        width: auto;
+    }
+
+    #news ul .newsli span {
+        font-size: max(min(3vw, 24px), 14px);
+        margin-top: 0;
+        font-weight: 400;
+        margin: 5vw;
+        line-height: 1.6;
+
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        white-space: normal;
+
+
+    }
+
+    #news ul .newsli:nth-child(2) {
+        padding-top: 5vw;
+    }
+
+    #news ul li:nth-child(2) a div {
+        background: url(../images/main/news2.jpg)no-repeat center top/contain;
+
+    }
+
+    #news ul li:nth-child(3) a div {
+        background: url(../images/main/news3.jpg)no-repeat center top/contain;
+    }
+
+    #news ul li:nth-child(4) a div {
+        background: url(../images/main/news4.jpg)no-repeat center top/contain;
+    }
+
+    #news ul li:nth-child(5) a div {
+        background: url(../images/main/news5.jpg)no-repeat center top/contain;
+    }
+
+
+    #part h3 {
+        font-size: max(5vw, 36px);
+    }
+
+    #part h3:before {
+        height: 6px;
+        top: 65px;
+    }
+
+    #part {
+        width: 100%;
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    #part > ul > li {
+        width: 100%;
+        height: auto;
+    }
+
+    #part > ul > li .top {
+        height: 50vw;
+    }
+
+    #part > ul > li:nth-child(1) .top {
+        background: url(../images/main/bnr1.jpg)no-repeat center center/cover;
+    }
+
+    #part > ul > li:nth-child(2) .top {
+        background: url(../images/main/bnr2.jpg)no-repeat center center/cover;
+    }
+
+    #part > ul > li:nth-child(3) .top {
+        background: url(../images/main/bnr3.jpg)no-repeat center center/cover;
+    }
+
+    #part > ul > li:nth-child(4) .top {
+        background: url(../images/main/bnr4.jpg)no-repeat center center/cover;
+
+    }
+
+    #part > ul > li > .m_con {
+        background: #fafafa;
+        margin: 0 10%;
+        width: 80%;
+        position: relative;
+        top: -20vw;
+        padding: min(5vw, 40px);
+
+    }
+
+    #part > ul > li > .m_con p {
+        font-size: max(min(48px, 6.6vw), 18px);
+    }
+
+    #part > ul > li > .m_con span {
+        font-size: max(min(24px, 3.3vw), 16px);
+
+    }
+
+    #part > ul > li > .m_con .fb {
+        width: 100%;
+        overflow: auto;
+        font-size: max(min(24px, 2.5vw), 12px);
+        color: #999;
+    }
+
+    #part > ul > li:nth-child(1) > .m_con p {
+        color: #2facf5
+    }
+
+    #part > ul > li:nth-child(2) > .m_con p {
+        color: #ff7800
+    }
+
+    #part > ul > li:nth-child(3) > .m_con p {
+        color: #076da8
+    }
+
+    #part > ul > li:nth-child(4) > .m_con p {
+        color: #f51621
+    }
+
+    #part > ul > li > .m_con .fb ul {
+        width: max-content;
+        margin-top: 2vw;
+    }
+
+    #part > ul > li > .m_con .fb ul li {
+        float: left;
+        border: 1px solid #ddd;
+        border-radius: 1000px;
+        margin: 1vw;
+    }
+
+    #part > ul > li > .m_con .fb li a {
+        display: block;
+        padding: 0 min(2.5vw, 20px);
+    }
+
+    /*모바일 서브 콘텐츠 페이지*/
+
+    .sub_visual p {
+        font-size: max(min(60px, 8.3vw), 30px);
+        font-weight: 400;
+    }
+
+    .sub_visual span {
+        font-size: max(min(36px, 4.5vw), 18px);
+        font-weight: 300;
+    }
+
+    .sub_cont {
+        width: min(100%, 720px);
+        float: none;
+        padding-top: 20px;
+        margin: 0 auto;
+    }
+
+    #sub_int h3,
+    #sub_part h3 {
+        font-size: max(min(60px, 8.3vw), 30px);
+        color: #333;
+        font-weight: 700;
+        line-height: 80px;
+        text-align: center;
+
+    }
+
+    .sub_cont > p {
+        font-size: max(min(36px, 5vw), 18px);
+        color: #076da8;
+        line-height: normal;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .sub_cont ul {
+        margin-top: 10vw;
+    }
+
+    .sub_cont ul li {
+        font-size: 18px;
+    }
+
+    .sub_cont ul li > div {
+        height: 300px;
+        width: 75%;
+    }
+
+
+    .sub_cont ul li p {
+        font-size: max(min(30px, 4.1vw), 18px);
+        background: #fefefe;
+        padding: 2vw;
+        font-weight: 400;
+        width: min(90vw, 648px);
+        position: relative;
+        bottom: min(18vw, 130px);
+        margin-left: 10vw;
+        line-height: 1.6;
+    }
+
+    .sub_cont ul li p span {
+        color: #076da8;
+        font-weight: 600;
+    }
+
+    .sub_cont ul li:nth-child(2n) p {
+        margin-left: 0;
+    }
+
+    #sub_int .sub_cont ul li:nth-child(1) div {
+        background: url(../images/sub/cont1.jpg)no-repeat right top/cover;
+    }
+
+    #sub_int .sub_cont ul li:nth-child(2) div {
+        background: url(../images/sub/cont2.jpg)no-repeat left top/cover;
+        margin-left: 25vw;
+    }
+
+    #sub_int .sub_cont ul li:nth-child(3) div {
+        background: url(../images/sub/cont3.png)no-repeat right top/cover;
+    }
+
+    #sub_part .sub_cont > p {
+        color: #c44a50;
+    }
+
+    #sub_part .sub_cont ul li p span {
+        color: #c44a50;
+    }
+
+    #sub_part .sub_cont ul li:nth-child(1) div {
+        background: url(../images/sub/cont2-1.jpg)no-repeat left top/cover;
+    }
+
+    #sub_part .sub_cont ul li:nth-child(2) div {
+        background: url(../images/sub/cont2-2.jpg)no-repeat right top/cover;
+        margin-left: 25vw;
+    }
+
+    #sub_part .sub_cont ul li:nth-child(3) div {
+        background: url(../images/sub/cont2-3.jpg)no-repeat left top/cover;
+    }
+
+    #sub_part .sub_cont ul li:last-child div {
+        background: url(../images/sub/cont2-4.jpg)no-repeat right top/cover;
+        margin-left: 25vw;
+    }
+
+
+
+}
+
+/* PC용 */
+@media (min-width:961px) {
+    .mob {
+        display: none;
+    }
+
+
+    header:hover .detail,
+    header:active .detail,
+    header:focus .detail {
+        display: flex;
+    }
+
+    #part > ul {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #part > ul > li {
+        float: left;
+        width: 25%;
+        height: 680px;
+        transition: 0.5s;
+    }
+
+    #part > ul > li > p {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    #part > ul > li article {
+        display: none;
+        background: #fff;
+        height: 100%;
+        width: max(40%, 537px);
+        float: right;
+        text-align: left;
+        padding: 100px 50px 0 50px;
+    }
+
+    #part > ul > li article h4 {
+        font-size: 30px;
+        color: #999;
+    }
+
+    #part > ul > li article p {
+        height: 320px;
+        font-size: 18px;
+        margin-top: 80px;
+        line-height: 2;
+        color: #666;
+    }
+
+    #part > ul > li article span {
+        font-size: 48px;
+        display: inline-block;
+        width: 140px;
+        margin-right: 20px;
+    }
+
+    /* 다이나믹 이펙트 */
+    #part > ul:hover > li {
+        width: 10%;
+        transition: 0.6s;
+    }
+
+    #part > ul:hover > li > p {
+        writing-mode: tb-rl;
+        height: 100%;
+        width: 100%;
+    }
+
+    #part > ul > li:hover > p {
+        display: none;
+    }
+
+
+    #part > ul > li:nth-child(1) {
+        background: url(../images/main/bnr1.jpg)no-repeat center center/cover;
+    }
+
+    #part > ul > li:nth-child(1):hover {
+        background: #2facf5 url(../images/main/bnr1-1.jpg)no-repeat left center/contain;
+
+    }
+
+    #part > ul > li:nth-child(2) {
+        background: url(../images/main/bnr2.jpg)no-repeat center center/cover;
+    }
+
+    #part > ul > li:nth-child(2):hover {
+        background: #ff7800 url(../images/main/bnr2-1.jpg)no-repeat left center/contain;
+
+    }
+
+    #part > ul > li:nth-child(3) {
+        background: url(../images/main/bnr3.jpg)no-repeat center center/cover;
+    }
+
+    #part > ul > li:nth-child(3):hover {
+        background: #076da8 url(../images/main/bnr3-1.jpg)no-repeat left center/contain;
+    }
+
+    #part > ul > li:nth-child(4) {
+        background: url(../images/main/bnr4.jpg)no-repeat center center/cover;
+
+    }
+
+    #part > ul > li:nth-child(4):hover {
+        background: #f51621 url(../images/main/bnr4-1.jpg)no-repeat left center/contain;
+
+    }
+
+    #part > ul > li:hover {
+        width: 70%;
+    }
+
+    #part > ul > li:hover article {
+        display: block;
+    }
+
+    /*  서브 콘텐츠 pc*/
+    #sub_int .wrap,
+    #sub_part .wrap {
+        width: min(calc(1200px + 1px), calc(100vw + 1px) );
+        border-right:1px solid #eee;
+    }
+
+    .sub_cont {
+        width: min(998px, 83vw);
+        float: right;
+
+
+    }
+
+    .sub_visual p {
+        font-size: 60px;
+        font-weight: 300;
+    }
+
+    .sub_visual span {
+        font-size: 24px;
+        font-weight: 300;
+    }
+
+    .sub_menu {
+        width: min(200px, 17vw);
+        padding-right: 20px;
+        float: left;
+    }
+
+    .sub_menu p {
+        background: #076da8;
+        height: 180px;
+        font-size: 30px;
+        font-weight: 600;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sub_menu ul {
+        height: 1180px;
+        border: 1px solid #eee;
+    }
+
+    .sub_menu li {
+        font-size: 16px;
+        font-weight: 500;
+        height: 50px;
+        border-bottom: 1px solid #eee;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+
+    }
+
+    #sub_int h3,
+    #sub_part h3 {
+        font-size: 48px;
+        color: #333;
+        font-weight: 600;
+        line-height: 100px;
+        padding-left: 20px;
+    }
+
+    .sub_cont > p {
+        font-size: 36px;
+        color: #076da8;
+        line-height: 60px;
+        padding-left: 20px;
+
+    }
+
+    .sub_cont ul li {
+        height: 300px;
+        font-size: 18px;
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    .sub_cont ul li:nth-child(3) {
+        height: 356px;
+    }
+
+    .sub_cont ul li p b {
+        font-size: 30px;
+        color: #333;
+        font-weight: 700;
+        line-height: 70px;
+    }
+
+
+    .sub_cont ul li:nth-child(2n) {
+        justify-content: flex-end;
+    }
+
+    .sub_cont ul li p {
+        width: 50%;
+        padding: 0 20px;
+    }
+
+    .sub_cont figure {
+        position: absolute;
+        right: -180px;
+        bottom: 0px;
+    }
+
+
+    #sub_part .sub_cont ul li {
+        align-items: flex-start;
+    }
+
+    #sub_int .sub_cont ul li:nth-child(1) {
+        background: url(../images/sub/cont1.jpg)no-repeat right top/50%;
+    }
+
+    #sub_int .sub_cont ul li:nth-child(2) {
+        background: url(../images/sub/cont2.jpg)no-repeat left top/50%;
+    }
+
+    #sub_int .sub_cont ul li:nth-child(3) {
+        background: url(../images/sub/cont3.png)no-repeat right top/50%;
+        position: relative;
+        z-index: 100;
+    }
+
+    /* 사업 분야*/
+    #sub_part .sub_visual {
+        background: url(../images/sub/visual2.jpg)no-repeat center top;
+    }
+
+    #sub_part .sub_menu ul {
+        height: 1540px;
+        border: 1px solid #eee;
+    }
+
+
+    #sub_part .sub_menu p {
+        background: #c44a50;
+    }
+
+    #sub_part .sub_cont > p {
+        color: #c44a50;
+    }
+
+    #sub_part .sub_cont ul li:nth-child(1) {
+        background: url(../images/sub/cont2-1.jpg)no-repeat right top/50%;
+    }
+
+    #sub_part .sub_cont ul li:nth-child(2) {
+        background: url(../images/sub/cont2-2.jpg)no-repeat left top/50%;
+    }
+
+    #sub_part .sub_cont ul li:nth-child(3) {
+        background: url(../images/sub/cont2-3.jpg)no-repeat right top/50%;
+        position: relative;
+        z-index: 100;
+    }
+
+    #sub_part .sub_cont ul li:last-child {
+        background: url(../images/sub/cont2-4.jpg)no-repeat left top/50%;
+        position: relative;
+        z-index: 100;
+    }
+
+
+
+
+
+
+}
