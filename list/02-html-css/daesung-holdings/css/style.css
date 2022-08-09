@@ -97,9 +97,9 @@ header .htop ul li a {
 
 header .detail > ul > li a {
     display: block;
-    
+
 }
-header .htop > ul > li a:hover, 
+header .htop > ul > li a:hover,
 header .htop > ul > li a:active,
 header .htop > ul > li a:focus {
     font-weight: 600;
@@ -128,7 +128,7 @@ header .detail > ul > li > ul > li{
 header .detail > ul > li > ul > li a {
     display: block;
 }
-header .detail > ul > li > ul > li a:hover, 
+header .detail > ul > li > ul > li a:hover,
 header .detail > ul > li > ul > li a:active,
 header .detail > ul > li > ul > li a:focus {
     font-weight: 600;
@@ -142,7 +142,7 @@ footer {
     font-weight: 100;
 }
 footer .wrap > a {
-    
+
     float: left;
     line-height: 120px;
 }
