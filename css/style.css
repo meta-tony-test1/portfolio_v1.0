@@ -3,6 +3,14 @@
    License: none (public domain)
 */
 
+@font-face {
+    font-family: 'Pre';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -49,11 +57,20 @@ table {
 
 
 /* common */
+body {
+    font-size: 16px;
+    font-family: pre;
+    color: #666;
+}
 .wrap {
     width:min(1200px,100%);
-    background: #eef;
     position: relative;
     margin: 0 auto;
+}
+.full {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 a {
     color: inherit;
@@ -61,7 +78,12 @@ a {
 }
 /* header */
 header {
-    height: 80px;
+    line-height: 80px;
+    border-bottom: 1px solid #ddd;
+    padding: 0 20px;
+}
+header h1 img {
+    vertical-align: middle;
 }
 header ul {
     position: absolute;
@@ -74,5 +96,64 @@ header ul {
 header ul li {
     float: left;
     text-align: right;
-    line-height: 80px;
+}
+
+/* contents */
+#visual {
+
+}
+#visual p {
+    font-size: 24px;
+    color: #999;
+    text-align: center;
+    margin-top: 120px;
+}
+#visual p span {
+    font-size: 36px;
+    position: relative;
+
+
+}
+#visual p span em {
+    color: #666;
+    z-index: 2;
+    position: relative;
+}
+#visual p span:after {
+    content: '';
+    position: absolute;
+    width: 87px;
+    height: 20px;
+    background: #f2faef;
+    top: 22px;
+    left: 0;
+}
+#visual p span:before {
+    content: '';
+    position: absolute;
+    width: 116px;
+    height: 20px;
+    background: #f2f5fc;
+    top: 22px;
+    left: 166px;
+}
+#visual p span strong {
+    color: #333;
+}
+#visual .wrap:after{
+    content: '';
+    width: 597px;
+    height: 356px;
+    background: url(../images/web.png)no-repeat center;
+    position: absolute;
+    bottom: -254px;
+    left: -200px;
+}
+#visual .wrap > div {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    z-index: 2;
+    background: url(../images/visual.jpg)no-repeat center;
+    margin-top: 120px;
 }
