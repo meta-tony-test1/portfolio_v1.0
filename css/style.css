@@ -50,7 +50,8 @@ table {
 
 /* common */
 .wrap {
-    width: 1200px;
+    width:min(1200px,100%);
+    background: #eef;
     position: relative;
     margin: 0 auto;
 }
