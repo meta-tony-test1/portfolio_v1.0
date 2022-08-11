@@ -3,21 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
 
+    <!-- 오픈 그래프 -->
     <meta property="og:type" content="website"> <!-- 사이트 종류 -->
-    <meta property="og:url" content="https://meta-tony-test1.github.io/portfolio_v1.0"> <!-- 사이트의 대표 url -->
+        <!-- 사이트의 대표 url -->
+    <meta property="og:url" content="https://meta-tony-test1.github.io/portfolio_v1.0">
     <meta property="og:title" content="meta-tony">
     <meta property="og:image" content="images/op.jpg">
     <meta property="og:description" content="김성훈 포트폴리오입니다.">
     <meta property="og:site_name" content="계획적이고 근면한 웹 퍼블리셔 김성훈입니다.">
     <meta property="og:locale" content="ko_KR"> <!-- 사이트 언어 기본값 en_US -->
-    <!-- 이미지 사이즈 -->
+        <!-- 이미지 사이즈 -->
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+
+    <!-- style -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!--반응형 파비콘-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
@@ -36,10 +42,10 @@
     <meta name="msapplication-TileImage" content="images/favacon//ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <title>웹퍼블리셔 김성훈 포트폴리오입니다.</title>
+    <title>김성훈 | 자기 소개</title>
 </head>
 
-<body class="full">
+<body>
     <header>
         <div class="wrap">
             <h1>
@@ -52,14 +58,29 @@
                     <a href="portfolio.html">포트폴리오</a>
                 </li>
                 <li>
-                    <a href="introduce.html">자기소개</a>
-                </li>
-                <li>
-                    <a href="contact.html">연락처</a>
+                    <a href="introduce.html" style="color:#333; font-weight: 700">자기소개</a>
                 </li>
             </ul>
         </div>
     </header>
+
+    <section id="intro">
+       <div class="wrap">
+        <h2>자기소개</h2>
+        <ul>
+            <li>
+                <img src="images/profile1.jpg" alt="이력서 사진">
+            </li>
+            <li>
+                <img src="images/profile2.jpg" alt="소개말">
+                <a href="resume.html">이력서 보기</a>
+            </li>
+        </ul>
+        <div class="skills">
+            <img src="images/skills.jpg" alt="보유 능력 및 업무 경험">
+        </div>
+        </div>
+    </section>
 
     </body>
 </html>
