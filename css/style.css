@@ -376,15 +376,15 @@ section h2 {
 }
 
 /* detail process */
-#kb {
+.copy {
     text-align: center;
 }
-#kb h3 {
+.copy h3 {
     font-size: 24px;
     margin-top: 34px;
     position: relative;
 }
-#kb h3:before {
+.copy h3:before {
     content: '';
     position: absolute;
     top: 50%;
@@ -393,7 +393,7 @@ section h2 {
     width: 38%;
     background: #ddd;
 }
-#kb h3:after {
+.copy h3:after {
     content: '';
     position: absolute;
     top: 50%;
@@ -402,17 +402,22 @@ section h2 {
     width: 38%;
     background: #ddd;
 }
-#kb h4 {
+.copy h3 i {
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+.copy h4 {
     margin-top: 80px;
     font-size: 36px;
     font-weight: 600;
 }
-#kb .wrap > span {
+.copy .wrap > span {
     margin-top: 80px;
     display: flex;
     justify-content: center;
 }
-#kb .wrap > span a {
+.copy .wrap > span a {
     display: block;
     margin: 0 40px;
     width: 224px;
@@ -420,36 +425,78 @@ section h2 {
     background-repeat: no-repeat;
     background-position: center;
 }
+.copy ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+.copy ul li {
+    width: 214px;
+    height: 34px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.copy ul li:nth-child(1) {
+    background-image: url(../images/link-g.jpg);
+}
+.copy ul li:nth-child(2) {
+    background-image: url(../images/link-v.jpg);
+}
+
+.copy ul li a {
+    display: block;
+    height: 100%;
+    margin: 0 50px;
+}
+
+/* kb */
 #kb .wrap > span a:nth-child(1) {
     background-image:url(../images/kb-link1.jpg);
 }
 #kb .wrap > span a:nth-child(2) {
     background-image:url(../images/kb-link2.jpg);
 }
-#kb ul {
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
-}
-#kb ul li {
-    width: 214px;
-    height: 34px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-#kb ul li:nth-child(1) {
-    background-image: url(../images/link-g.jpg);
-}
-#kb ul li:nth-child(2) {
-    background-image: url(../images/link-v.jpg);
-}
-#kb ul li a {
-    display: block;
-    height: 100%;
-    margin: 0 50px;
-}
 #kb .wrap > div {
     background: url(../images/kb-text.jpg)no-repeat center;
     height: 117px;
     margin-top: 120px;
+}
+
+
+/* yd */
+#yd .wrap > span a:nth-child(1) {
+    background-image:url(../images/yd-link1.jpg);
+}
+#yd .wrap > span a:nth-child(2) {
+    background-image:url(../images/yd-link2.jpg);
+}
+#yd .wrap > div {
+    background: url(../images/yd-text.jpg)no-repeat center;
+    height: 117px;
+    margin-top: 120px;
+}
+
+/* design resume */
+#mt {
+    padding-bottom: 80px;
+}
+#mt ul li:nth-child(3) {
+    background-image: url(../images/mt-link1.jpg);
+}
+.dd h3 {
+    padding-top: 80px;
+}
+.dd p {
+    margin: 30px 0;
+}
+.dd p b {
+    font-weight: 600;
+    color: #555;
+    margin: 0 20px;
+}
+#mt .wrap > div {
+    background: url(../images/mt1.jpg)no-repeat center top;
+    margin-top: 60px;
+    background-size: auto 600px;
+    height: 600px;
 }
