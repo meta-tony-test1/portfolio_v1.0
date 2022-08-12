@@ -374,3 +374,82 @@ section h2 {
 #resume figure {
     margin-top: 120px;
 }
+
+/* detail process */
+#kb {
+    text-align: center;
+}
+#kb h3 {
+    font-size: 24px;
+    margin-top: 34px;
+    position: relative;
+}
+#kb h3:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    width: 38%;
+    background: #ddd;
+}
+#kb h3:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 1px;
+    width: 38%;
+    background: #ddd;
+}
+#kb h4 {
+    margin-top: 80px;
+    font-size: 36px;
+    font-weight: 600;
+}
+#kb .wrap > span {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+#kb .wrap > span a {
+    display: block;
+    margin: 0 40px;
+    width: 224px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#kb .wrap > span a:nth-child(1) {
+    background-image:url(../images/kb-link1.jpg);
+}
+#kb .wrap > span a:nth-child(2) {
+    background-image:url(../images/kb-link2.jpg);
+}
+#kb ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+#kb ul li {
+    width: 214px;
+    height: 34px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#kb ul li:nth-child(1) {
+    background-image: url(../images/link-g.jpg);
+}
+#kb ul li:nth-child(2) {
+    background-image: url(../images/link-v.jpg);
+}
+#kb ul li a {
+    display: block;
+    height: 100%;
+    margin: 0 50px;
+}
+#kb .wrap > div {
+    background: url(../images/kb-text.jpg)no-repeat center;
+    height: 117px;
+    margin-top: 120px;
+}
