@@ -502,6 +502,16 @@ section h2 {
 #ds {
     margin-bottom: 240px;
 }
+#ds > figure {
+    width: 100%;
+    height: 2726px;
+    background: url(../images/ds2.jpg)no-repeat center;
+
+
+}
+#ds > figure img {
+    text-align: center;
+}
 #ds h3 {
     font-size: 30px;
     color: #555;
@@ -587,6 +597,7 @@ section h2 {
     width: auto;
     margin: 0 60px;
     color: #999;
+    cursor: pointer;
 }
 #ds .wrap > div ul li.on {
     color: #333;
