@@ -68,7 +68,7 @@ body {
     position: relative;
     margin: 0 auto;
 }
-ul:after, .wrap:after {
+ul:after, .wrap:after, section:after {
     content: '';
     clear: both;
     display: block;
@@ -483,9 +483,6 @@ section h2 {
 #mt ul li:nth-child(3) {
     background-image: url(../images/mt-link1.jpg);
 }
-.dd h3 {
-    padding-top: 80px;
-}
 .dd p {
     margin: 30px 0;
 }
@@ -499,4 +496,106 @@ section h2 {
     margin-top: 60px;
     background-size: auto 600px;
     height: 600px;
+}
+
+/* ds */
+#ds {
+    margin-bottom: 240px;
+}
+#ds h3 {
+    font-size: 30px;
+    color: #555;
+    font-weight: 600;
+}
+#ds ul {
+    display: flex;
+    justify-content: center;
+}
+#ds ul li {
+    width: 224px;
+    height: 100px;
+    float: left;
+    margin: 0 10px;
+}
+#ds .wrap > ul li:nth-child(1) {
+    background: url(../images/ds-link1.jpg)no-repeat center;
+}
+#ds .wrap > ul li:nth-child(2) {
+    background: url(../images/ds-link2.jpg)no-repeat center;
+}
+#ds figure {
+    margin-top: 120px;
+    margin-bottom: 160px;
+}
+#ds figure img {
+    text-align: center;
+}
+#ds h4 {
+    margin-bottom: 80px;
+}
+#ds .pc {
+    background: url(../images/browser-pc.png)no-repeat left top;
+    width: 812px;
+    height: 500px;
+    float: left;
+    padding: 29px 1px 1px 1px;
+    border-radius: 10px;
+    position: relative;
+    overflow: auto;
+}
+
+.cont::-webkit-scrollbar {
+  width: 10px;  /* 스크롤바의 너비 */
+}
+
+.cont::-webkit-scrollbar-thumb {
+    background: #a4a9b4;
+    /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+.cont::-webkit-scrollbar-track {
+  background: #eaecef;  /*스크롤바 뒷 배경 색상*/
+}
+
+
+#ds .pc img {
+    width: 100%;
+}
+#ds .cont {
+    height: 100%;
+    overflow: auto;
+}
+#ds .mob {
+    background: url(../images/browser-mob.png)no-repeat center;
+    width: 254px;
+    height: 500px;
+    float: right;
+    padding: 44px 1px 1px 1px;
+    margin: 0 67px;
+    border-radius: 10px;
+}
+#ds .mob img {
+    width: 100%;
+}
+#ds .wrap > div ul {
+    align-items: center;
+    margin-bottom: 80px;
+}
+#ds .wrap > div ul li{
+    background-image: none;
+    height: auto;
+    width: auto;
+    margin: 0 60px;
+    color: #999;
+}
+#ds .wrap > div ul li.on {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+}
+#ds .cont img {
+    display: none;
+}
+#ds .cont img.pic{
+    display: block;
 }
