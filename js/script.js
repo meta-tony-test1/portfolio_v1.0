@@ -1,6 +1,6 @@
-$("#ds .wrap > div li").click(function(){
+$(".web .wrap > div li").click(function(){
     $(this).addClass("on").siblings("li").removeClass("on");
     var n = $(this).index()
-    $("#ds .cont img").eq(n).addClass("pic").siblings("img").removeClass();
-    $("#ds .mob .cont img").eq(n).addClass("pic").siblings("img").removeClass();
+    $(".web .cont img").eq(n).addClass("pic").siblings("img").removeClass();
+    $(".web .mob .cont img").eq(n).addClass("pic").siblings("img").removeClass();
 })

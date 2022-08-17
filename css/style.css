@@ -498,52 +498,47 @@ section h2 {
     height: 600px;
 }
 
-/* ds */
-#ds {
+/* web design */
+
+.web {
     margin-bottom: 240px;
 }
-#ds > figure {
+.web > figure {
     width: 100%;
-    height: 2726px;
-    background: url(../images/ds2.jpg)no-repeat center;
-
-
 }
-#ds > figure img {
+.web > figure img {
     text-align: center;
 }
-#ds h3 {
+.web h3 {
     font-size: 30px;
     color: #555;
     font-weight: 600;
 }
-#ds ul {
+.web ul {
     display: flex;
     justify-content: center;
 }
-#ds ul li {
+.web ul li {
     width: 224px;
     height: 100px;
     float: left;
     margin: 0 10px;
 }
-#ds .wrap > ul li:nth-child(1) {
-    background: url(../images/ds-link1.jpg)no-repeat center;
-}
-#ds .wrap > ul li:nth-child(2) {
-    background: url(../images/ds-link2.jpg)no-repeat center;
-}
-#ds figure {
+
+.web figure {
     margin-top: 120px;
     margin-bottom: 160px;
 }
-#ds figure img {
+.web figure img {
     text-align: center;
 }
-#ds h4 {
+.web h4 {
     margin-bottom: 80px;
 }
-#ds .pc {
+.web .wrap > img {
+    margin-top: 120px;
+}
+.web .pc {
     background: url(../images/browser-pc.png)no-repeat left top;
     width: 812px;
     height: 500px;
@@ -568,14 +563,14 @@ section h2 {
 }
 
 
-#ds .pc img {
+.web .pc img {
     width: 100%;
 }
-#ds .cont {
+.web .cont {
     height: 100%;
     overflow: auto;
 }
-#ds .mob {
+.web .mob {
     background: url(../images/browser-mob.png)no-repeat center;
     width: 254px;
     height: 500px;
@@ -584,14 +579,14 @@ section h2 {
     margin: 0 67px;
     border-radius: 10px;
 }
-#ds .mob img {
+.web .mob img {
     width: 100%;
 }
-#ds .wrap > div ul {
+.web .wrap > div ul {
     align-items: center;
     margin-bottom: 80px;
 }
-#ds .wrap > div ul li{
+.web .wrap > div ul li{
     background-image: none;
     height: auto;
     width: auto;
@@ -599,14 +594,35 @@ section h2 {
     color: #999;
     cursor: pointer;
 }
-#ds .wrap > div ul li.on {
+.web .wrap > div ul li.on {
     color: #333;
     font-size: 18px;
     font-weight: 600;
 }
-#ds .cont img {
+.web .cont img {
     display: none;
 }
-#ds .cont img.pic{
+.web .cont img.pic{
     display: block;
+}
+
+/* ds */
+#ds > figure {
+    background: url(../images/ds2.jpg)no-repeat center;
+    height: 2726px;
+}
+#ds .wrap > ul li:nth-child(1) {
+    background: url(../images/ds-link1.jpg)no-repeat center;
+}
+#ds .wrap > ul li:nth-child(2) {
+    background: url(../images/ds-link2.jpg)no-repeat center;
+}
+
+/* hj */
+#hj > figure {
+    background: url(../images/hj2.jpg)no-repeat center;
+    height: 1822px;
+}
+#hj .wrap > ul li:nth-child(1) {
+    background: url(../images/hj-link1.jpg)no-repeat center;
 }
