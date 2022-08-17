@@ -626,3 +626,8 @@ section h2 {
 #hj .wrap > ul li:nth-child(1) {
     background: url(../images/hj-link1.jpg)no-repeat center;
 }
+/* lt */
+#lt > figure {
+    background: url(../images/lt2.jpg)no-repeat center;
+    height: 9187px;
+}
