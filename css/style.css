@@ -526,8 +526,9 @@ section h2 {
 }
 
 .web figure {
-    margin-top: 120px;
-    margin-bottom: 160px;
+    /*margin-top: 120px;
+    margin-bottom: 160px;*/
+    margin: 120px auto 160px auto;
 }
 .web figure img {
     text-align: center;
@@ -630,4 +631,70 @@ section h2 {
 #lt > figure {
     background: url(../images/lt2.jpg)no-repeat center;
     height: 9187px;
+}
+
+/*td*/
+#td ul li:nth-child(1) {
+    background-image: url(../images/td-link1.jpg)
+}
+#td ul li:nth-child(2) {
+    background-image: url(../images/td-link2.jpg)
+}
+#td .td-cont{
+    width: min(1920px, 100%);
+    margin: 0 auto;
+}
+.td-cont div{
+    margin-top: 160px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#td .td-cont div:nth-child(1) {
+    width: 100%;
+    background-image: url(../images/td2.jpg);
+    height: 4246px;
+}
+#td .td-cont div:nth-child(2) {
+    width: 100%;
+    background-image: url(../images/td3.jpg);
+    height: 2011px;
+}
+#td h3 i {
+    position: relative;
+    padding-right: 111px;
+}
+#td h3 img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 156px;
+}
+/* ppt*/
+#td-ppt .wrap > h3:last-child {
+    margin-top: 120px;
+}
+#td-ppt .td-cont div:nth-child(1) {
+    width: 100%;
+    background-image: url(../images/td-ppt1.jpg);
+    height: 4304px;
+}
+#td-ppt .td-cont div:nth-child(2) {
+    width: 100%;
+    background-image: url(../images/td-ppt2.jpg);
+    height: 4304px;
+}
+#td-ppt .td-cont div:nth-child(3) {
+    width: 100%;
+    background-image: url(../images/td-ppt3.jpg);
+    height: 4305px;
+}
+#td-ppt .td-cont div:nth-child(4) {
+    width: 100%;
+    background-image: url(../images/td-ppt4.jpg);
+    height: 3763px;
+}
+#td-ppt .td-cont div:nth-child(5) {
+    width: 100%;
+    background-image: url(../images/td-ppt5.jpg);
+    height: 1598px;
 }
