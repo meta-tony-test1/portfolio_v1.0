@@ -408,7 +408,7 @@ section h2 {
     z-index: 10;
 }
 .copy h4 {
-    margin-top: 80px;
+    margin-top: 60px;
     font-size: 36px;
     font-weight: 600;
 }
@@ -459,7 +459,7 @@ section h2 {
 #kb .wrap > div {
     background: url(../images/kb-text.jpg)no-repeat center;
     height: 117px;
-    margin-top: 120px;
+    margin-top: 80px;
 }
 
 
@@ -473,7 +473,7 @@ section h2 {
 #yd .wrap > div {
     background: url(../images/yd-text.jpg)no-repeat center;
     height: 117px;
-    margin-top: 120px;
+    margin-top: 80px;
 }
 
 /* design resume */
@@ -632,7 +632,10 @@ section h2 {
     background: url(../images/lt2.jpg)no-repeat center;
     height: 9187px;
 }
-
+#lt h3 img {
+    line-height: 35px;
+    vertical-align: middle;
+}
 /*td*/
 #td ul li:nth-child(1) {
     background-image: url(../images/td-link1.jpg)

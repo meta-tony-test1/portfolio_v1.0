@@ -111,12 +111,12 @@ header .detail{
     padding-top: 1vw;
     display:none;
     transition: 2s;
-
+    padding-left:min(240px ,20vw);
+    position: absolute;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
 }
 
-header .detail{
-     margin-left:min(240px ,20vw);
-}
 header .detail > ul > li {
     float: left;
     width:min(128px ,10vw);
