@@ -385,6 +385,59 @@ section h2 {
 }
 
 /* detail process */
+.mono {
+    padding-bottom: 100px;
+    text-align: center;
+}
+.mono h3 {
+    font-size: 24px;
+    margin: 34px 0;
+    position: relative;
+    
+}
+.mono h3:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    width: 38%;
+    background: #ddd;
+}
+.mono h3:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 1px;
+    width: 38%;
+    background: #ddd;
+}
+.mono h3 i {
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+.mono h4 {
+    margin-top: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.8;
+}
+.mono .wrap ul {
+    font-size: 16px;
+}
+.mono .wrap ul li a{
+    line-height: 1.8;
+    color:#999;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.mono .wrap ul li a:hover {
+    color: #222;
+}
+
+/* ******************* */
 .copy {
     text-align: center;
 }
@@ -473,6 +526,9 @@ section h2 {
 
 
 /* yd */
+#yd {
+    padding-bottom: 100px;
+}
 #yd .wrap > span a:nth-child(1) {
     background-image:url(../images/yd-link1.jpg);
 }
