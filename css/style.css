@@ -223,8 +223,17 @@ section h2 {
     background-repeat: no-repeat;
     display: block;
     height: 262px;
+} 
+#list .js h4 {
+    font-size :28px;
 }
-
+#list .js h3:after {
+    background: #fbf5c5;
+    width: 334px;
+}
+#list .js ul li:nth-child(1) span {
+    background-image: url(../images/react-logo.png);
+}
 #list .mark ul li:nth-child(1) span {
     background-image: url(../images/kb1.png);
 }
