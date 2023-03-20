@@ -19,6 +19,7 @@
 
     <!--style-->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./prism.css">
 
     <!--favicon-->
     <meta name="msapplication-TileColor" content="#ffffff">
@@ -78,13 +79,194 @@
             <i>&nbsp;&nbsp; prop와 state를 통한 컴포넌트 관리 &nbsp;&nbsp;</i>
         </h3>
         <ul>
-            <li><a href="./build/index.html" target="_blank" ><i>실행코드</i></a></li>
+            <li><a href="./build/index.html" target="_blank" ><i>실행</i></a></li>
             <li><a href="https://meta-tony.tistory.com/30" target="_blank"><i>블로그 일지</i></a></li>
         </ul>
         <br/><br/>
-        <hr>
+        <br>
+        <h2>React Code</h2>
+        <pre class="line-numbers"><code class="language-javascript">import React,{useState} from &#x22;react&#x22;
+            import &#x22;./App.css&#x22;
+            const Header = props =&#x3E; {
+            return(
+              &#x3C;&#x3E;
+              &#x3C;h1&#x3E;&#x3C;a href=&#x22;./&#x22; onClick={e=&#x3E;{
+                e.preventDefault();
+                props.onChangeMode()
+              }}&#x3E;{props.title}&#x3C;/a&#x3E;&#x3C;/h1&#x3E;
+              &#x3C;/&#x3E;
+            )
+            }
+            const Nav = props =&#x3E; {
+              let t = props.topics;
+              let lis = t.map(item =&#x3E; {
+                  return(
+                  &#x3C;li key={item.id}&#x3E;
+                    &#x3C;a href={&#x22;/&#x22;+t.id} onClick={e=&#x3E;{
+                      e.preventDefault()
+                      props.onChangeMode(item.id)
+                    }}&#x3E;
+                      {item.title}
+                    &#x3C;/a&#x3E;
+                  &#x3C;/li&#x3E;)
+              })
+            return(
+              &#x3C;&#x3E;
+                &#x3C;ol&#x3E;
+                  {lis}
+                &#x3C;/ol&#x3E;
+              &#x3C;/&#x3E;
+            )
+            }
+            const Article = props =&#x3E; {
+            return(
+              &#x3C;article&#x3E;
+                &#x3C;h2&#x3E;{props.title}&#x3C;/h2&#x3E;
+                &#x3C;p&#x3E;{props.body}&#x3C;/p&#x3E;
+              &#x3C;/article&#x3E;
+            )
+            }
+            const Create = (props) =&#x3E; {
+              let title, body = null
+              return(
+                &#x3C;div&#x3E;
+                  &#x3C;h2&#x3E;Create&#x3C;/h2&#x3E;
+                    &#x3C;form onSubmit={(e)=&#x3E;{
+                      e.preventDefault();
+                      title = e.target.title.value
+                      body = e.target.body.value
+                      props.onCreate(title, body)
+                    }}&#x3E;
+                      &#x3C;p&#x3E;&#x3C;input type=&#x22;text&#x22; name=&#x22;title&#x22; placeholder=&#x22;Program Name&#x22; /&#x3E;&#x3C;/p&#x3E;
+                      &#x3C;p&#x3E;&#x3C;textarea name=&#x22;body&#x22; placeholder=&#x22;Explanation&#x22; /&#x3E;&#x3C;/p&#x3E;
+                      &#x3C;input type=&#x22;submit&#x22; value=&#x22;Create&#x22;/&#x3E;
+                    &#x3C;/form&#x3E;
+                &#x3C;/div&#x3E;
+              )
+            }
+            const Update = (props) =&#x3E; {
+              let [title, setTitle] = useState(props.title)
+              let [body, setBody] = useState(props.body)
+              return(
+                &#x3C;div&#x3E;
+                  &#x3C;h2&#x3E;Update&#x3C;/h2&#x3E;
+                    &#x3C;form onSubmit={(e)=&#x3E;{
+                      e.preventDefault();
+                      props.onUpdate(title, body)
+                    }}&#x3E;
+                      &#x3C;p&#x3E;&#x3C;input type=&#x22;text&#x22; name=&#x22;title&#x22; placeholder=&#x22;Program Name&#x22; value={title} onChange={e=&#x3E;{
+                        setTitle(e.target.value)
+                      }}/&#x3E;&#x3C;/p&#x3E;
+                      &#x3C;p&#x3E;&#x3C;textarea name=&#x22;body&#x22; placeholder=&#x22;Explanation&#x22; value={body} onChange={e=&#x3E;{
+                        setBody(e.target.value)
+                      }}/&#x3E;&#x3C;/p&#x3E;
+                      &#x3C;input type=&#x22;submit&#x22; value=&#x22;Update&#x22;/&#x3E;
+                    &#x3C;/form&#x3E;
+                &#x3C;/div&#x3E;
+              )  
+            }
+            const App = () =&#x3E; {
+              const [topics, setTopics] = useState([
+                {id:1, title:&#x27;HTML&#x27;, body:&#x27;HTML is ...&#x27;},
+                {id:2, title:&#x27;CSS&#x27;, body:&#x27;CSS is ...&#x27;},
+                {id:3, title:&#x27;Javascript&#x27;, body:&#x27;Javascript is ...&#x27;}
+              ])
+              const [mode, setMode] =useState(&#x27;WELCOME&#x27;)
+              const [id, setId] = useState(1)
+              const [nextId, setNextId] = useState(4)
+            
+              let content = null;
+              let body, title = null
+              let newTopic, newTopics = null;
+              let control = null;
+            
+              switch (mode){
+                case &#x27;READ&#x27;:
+                topics.map(item=&#x3E; {
+                  if(id === item.id ) {
+                    title = item.title;
+                    body = item.body;        
+                  }
+                })
+            
+                  content = &#x3C;Article title={title} body={body}/&#x3E;
+                  control = 
+                  &#x3C;&#x3E;
+                    &#x3C;li&#x3E;
+                      &#x3C;a href=&#x22;/create&#x22; onClick={e=&#x3E;{
+                        e.preventDefault()
+                        setMode(&#x27;CREATE&#x27;)
+                      }}&#x3E;Create&#x3C;/a&#x3E;
+                    &#x3C;/li&#x3E;
+                    &#x3C;li&#x3E;
+                      &#x3C;a href=&#x22;/update&#x22; onClick={e=&#x3E;{
+                        e.preventDefault()
+                        setMode(&#x27;UPDATE&#x27;)
+                      }}&#x3E;Update&#x3C;/a&#x3E;
+                    &#x3C;/li&#x3E;
+                    &#x3C;li&#x3E;
+                      &#x3C;button onClick={()=&#x3E; {
+                        newTopics = topics.filter(item =&#x3E; item.id !== id)
+                        setTopics(newTopics)
+                        setMode(&#x27;WELCOME&#x27;)
+                      }}&#x3E;Delete&#x3C;/button&#x3E;
+                    &#x3C;/li&#x3E;
+                  &#x3C;/&#x3E;
+                  break;
+                case &#x27;CREATE&#x27;:
+                  content = &#x3C;Create onCreate={(title, body)=&#x3E;{
+                    newTopic = {id:nextId, title:title, body:body}
+                    newTopics = [...topics]
+                    newTopics.push(newTopic)
+                    setTopics(newTopics)
+                    setId(nextId)
+                    setNextId(nextId+1)
+                    setMode(&#x27;READ&#x27;)
+                  }}/&#x3E;      
+                  break;
+                case &#x27;UPDATE&#x27;: 
+                  let updatedTopics = topics.filter(itme =&#x3E; id === itme.id)
+                    .map(item =&#x3E; {return(title=item.title, body=item.body)})
+                  content = &#x3C;Update title={title} body={body} onUpdate={(title, body)=&#x3E;{
+                    updatedTopics= topics.map(item =&#x3E; id === item.id ? {id:id, title:title, body:body} : item )
+                    setTopics(updatedTopics)
+                    setMode(&#x27;READ&#x27;)
+                  }}/&#x3E;
+                  break;
+                default: 
+                  content = &#x3C;Article title={&#x27;Welcome&#x27;} body={&#x22;Web Development Industrial&#x22;}/&#x3E;
+                  control = 
+                  &#x3C;li&#x3E;
+                    &#x3C;a href=&#x22;/create&#x22; onClick={e=&#x3E;{
+                      e.preventDefault()
+                      setMode(&#x27;CREATE&#x27;)
+                    }}&#x3E;Create&#x3C;/a&#x3E;
+                  &#x3C;/li&#x3E;
+              }
+              return (
+                &#x3C;div&#x3E;
+                  &#x3C;Header title={&#x27;WEB&#x27;} onChangeMode={()=&#x3E;{
+                    setMode(&#x27;WELCOME&#x27;)
+                  }} /&#x3E;
+                  &#x3C;Nav topics={topics} onChangeMode={(id)=&#x3E;{
+                    setId(id)
+                    setMode(&#x27;READ&#x27;)
+                  }}/&#x3E;
+                  {content}
+                  &#x3C;ul&#x3E;
+                    {control}
+                  &#x3C;/ul&#x3E;
+                &#x3C;/div&#x3E;
+              );
+            }
+            
+            export default App;
+                </code></pre>
         </div>
     </section>
+
+
+    <script src="./prism.js"></script>
 </body>
 
 </html>
