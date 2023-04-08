@@ -232,6 +232,9 @@ section h2 {
     width: 334px;
 }
 #list .js ul li:nth-child(1) span {
+    background-image: url(../images/ajax-logo.jpg);
+}
+#list .js ul li:nth-child(2) span {
     background-image: url(../images/react-logo.png);
 }
 #list .mark ul li:nth-child(1) span {
