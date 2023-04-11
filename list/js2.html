@@ -343,101 +343,53 @@
           }
           export default ClassComp;</code></pre>
         <h2>Function Lifecycle</h2>
-        <pre class="line-numbers"><code class="language-javascript">import React, { useState, useEffect } from &#x27;react&#x27;;
+        <pre class="line-numbers"><code class="language-javascript">import React,{useState, useEffect} from &#x27;react&#x27;;
 
-          const Nav = (props) =&#x3E; {
-            const listTag = props.list.map((arr) =&#x3E; (
-              &#x3C;li key={arr.id}&#x3E;
-                &#x3C;a
-                  href={arr.id}
-                  data-id={arr.id}
-                  onClick={(e) =&#x3E; {
-                    e.preventDefault();
-                    props.onChangeId(e.target.dataset.id);
-                  }}
-                &#x3E;
-                  {arr.title}
-                &#x3C;/a&#x3E;
-              &#x3C;/li&#x3E;
-            ));
-          
-            return (
-              &#x3C;nav&#x3E;
-                &#x3C;ul&#x3E;{listTag}&#x3C;/ul&#x3E;
-              &#x3C;/nav&#x3E;
-            );
-          };
-          const Article = props =&#x3E; {
-              return(
-                  &#x3C;article&#x3E;
-                      &#x3C;h2&#x3E;{props.title}&#x3C;/h2&#x3E;
-                      {props.desc}
-                  &#x3C;/article&#x3E;
-              )
-          }
-          const NowLoading = () =&#x3E; {
-              return(
-                  &#x3C;div&#x3E;Now Loading ...&#x3C;/div&#x3E;
-              )
-          }
-          const FuncAJAX = () =&#x3E; {
-            const [contents, setContents] = useState({
-              item: { title: &#x27;Welcome&#x27;, desc: &#x27;Hello, React &#x26; Ajax&#x27; },
-              isLoading: false,
-            });
-            const [list, setList] = useState({
-              items: [],
-              isLoading: false,
-            });
-            const [nowId, setNowId] = useState()
-            const onChangeId = (e) =&#x3E; {setNowId(e)}
-            useEffect(() =&#x3E; {
-              setList({...list, isLoading:true})
-              fetch(&#x27;list.json&#x27;)
-                .then((result) =&#x3E; {
-                  return result.json();
-                })
-                .then((json) =&#x3E; {
-                  setList({
-                    items: json,
-                    isLoading: false,
-                  });
-                });
-            }, []);
-          
-            console.log(nowId)
-            
-            useEffect(()=&#x3E;{
-              if(nowId){
-              setContents({...contents, isLoading:true})
-              fetch(nowId + &#x22;.json&#x22;)
-                  .then((result) =&#x3E; {
-                      return result.json(); 
-                  })
-                  .then((json) =&#x3E; {
-                  setContents({
-                      item:{
-                          title:json.title, 
-                          desc:json.desc
-                      },
-                      isLoading:false
-                  })
-            })
+          var funcStyle = &#x27;color:blue&#x27;
+          var funcId = 0;
+          function FuncComp(props) {
+            const [number, setNumber] = useState(props.initNumber)
+            const [_date, setDate] = useState((new Date()).toString())
+          useEffect(function(){
+            console.log(&#x27;%cfunc =&#x3E; useEffect number (componentDidMount)&#x27;+(++funcId),funcStyle)
+            document.title = number;
+            return function(){ //clean up
+              console.log(&#x27;%cfunc =&#x3E; useEffect return (componentWillUnMount)&#x27;+(++funcId),funcStyle)
             }
-          },[nowId])
-            let ArticleTag = contents.isLoading ? &#x3C;NowLoading /&#x3E; : &#x3C;Article title={contents.item.title} desc={contents.item.desc}   /&#x3E;
-            let listTag = list.isLoading ? &#x3C;NowLoading /&#x3E; : &#x3C;Nav list={list.items} onChangeId={onChangeId} /&#x3E;
-            return (
-              &#x3C;div style={{ margin: 40, border: &#x27;1px solid #aaa&#x27;, padding: 40, paddingTop: 10 }}&#x3E;
-                  &#x3C;h1&#x3E;React AJAX - Hooks&#x3C;/h1&#x3E;
-                  {listTag}
-                  {ArticleTag}
+          }, []);//&#xBE48;&#xBC30;&#xC5F4; 2&#xD68C;&#xB9CC; &#xC2E4;&#xD589;
+            //side Effect-&#xB80C;&#xB354;&#xB418;&#xB294; &#xD6A8;&#xACFC;, main Effect-&#xD654;&#xBA74;&#xC774; &#xCD9C;&#xB825;&#xB418;&#xB294; &#xCF54;&#xB4DC;
+            useEffect(function(){
+              console.log(&#x27;%cfunc =&#x3E; useEffect number (componentDidMount &#x26; componentDidUpdate) A&#x27;+(++funcId),funcStyle)
+              document.title = number;
+              return function(){ //clean up
+                console.log(&#x27;%cfunc =&#x3E; useEffect return (componentDidMount &#x26; componentDidUpdate)&#x27;+(++funcId),funcStyle)
+              }
+            }, [number])
+            //&#xBCF5;&#xC218; &#xAC00;&#xB2A5;
+            useEffect(function(){
+              console.log(&#x27;%cfunc =&#x3E; useEffect(componentDidMount &#x26; componentDidUpdate) B&#x27;+(++funcId),funcStyle)
+              document.title = number + &#x22;:&#x22; + _date;
+            })
+            console.log(&#x27;%cfunc =&#x3E; render &#x27;+(++funcId),funcStyle)
+            return(
+              &#x3C;div className=&#x22;container&#x22;&#x3E;
+                &#x3C;h2 style={{color:&#x27;blue&#x27;}}&#x3E;Function style component&#x3C;/h2&#x3E;
+                &#x3C;p&#x3E;Number: {number}&#x3C;/p&#x3E;
+                &#x3C;p&#x3E;date: {_date}&#x3C;/p&#x3E;
+                &#x3C;input type=&#x22;button&#x22; value=&#x22;random&#x22; onClick={
+                  function(){  
+                    setNumber(Math.random());
+                  }
+                }/&#x3E;
+                &#x3C;input type=&#x22;button&#x22; value=&#x22;date&#x22; onClick={
+                  function(){  
+                    setDate((new Date()).toString())
+                  }
+                }/&#x3E;
               &#x3C;/div&#x3E;
-            );
-          };
-          
-          export default FuncAJAX;
-          </code></pre>
+            )
+          }
+          export default FuncComp</code></pre>
         </div>
     </section>
 
