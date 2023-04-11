@@ -80,123 +80,364 @@
         </h3>
         <ul>
             <li><a href="./build-ajax/index.html" target="_blank" ><i>실행</i></a></li>
-            <li><a href="https://meta-tony.tistory.com/50" target="_blank"><i>블로그 일지</i></a></li>
+            <li><a href="https://meta-tony.tistory.com/61" target="_blank"><i>블로그 일지</i></a></li>
         </ul>
         <br/><br/>
         <br>
         <h3>실행 기능</h3>
         <div style="background:url(../images/ajax-run.jpg) no-repeat center/90%; height: 259px; margin:0 auto"></div>
-        <h2>React Code</h2>
-<pre class="line-numbers">
-<code class="language-javascript">import React, {Component} from &#x27;react&#x27;;
+        <h2>function AJAX</h2>
+        <pre class="line-numbers"><code class="language-javascript">import React, { useState, useEffect } from &#x27;react&#x27;;
 
-  class Nav extends Component {
-    render(){
-      let listTag = [];
-      this.props.list.map(arr =&#x3E; {
-      return listTag.push(
-          &#x3C;li key={arr.id}&#x3E;
-          &#x3C;a href={arr.id} data-id={arr.id} onClick={function(e){
-            e.preventDefault();
-            this.props.onClick(e.target.dataset.id)
-          }.bind(this)}&#x3E;
-            {arr.title}
-          &#x3C;/a&#x3E;
-        &#x3C;/li&#x3E;
-        )
-    })
-      return(
-        &#x3C;nav&#x3E;
-          &#x3C;ul&#x3E;
-            {listTag}
-          &#x3C;/ul&#x3E;
-        &#x3C;/nav&#x3E;
-      )
-    }
-  }
-  class Article extends Component{
-    render(){
-      return(
-      &#x3C;article&#x3E;
-        &#x3C;h2&#x3E;{this.props.title}&#x3C;/h2&#x3E;
-        {this.props.desc}
-      &#x3C;/article&#x3E;
-      )}
-  }
-  class NowLoading extends Component{
-    render(){
-      return &#x3C;div&#x3E;Now Loading...&#x3C;/div&#x3E;
-    }
-  }
-  class App extends Component {
-    state = {
-      article:{
-        item:{title:&#x27;Welcome&#x27;, desc:&#x22;Hello, React &#x26; Ajax&#x22;},
-        isLoading:false
-      },
-      list:{
-      items:[],
-      isLoading:false
-      }
-    }
-  
-    componentDidMount() {
-      let newList = Object.assign({}, this.state.list, {isLoading:true});
-      this.setState({list:newList})
-      fetch(&#x27;list.json&#x27;)
-        .then(function(result){
-          return result.json();
-        })
-        .then(function(json){
-          this.setState({list:{
-            items:json,
-            isLoading:false
-          }});
-        }.bind(this))
-    }
-    render(){
-      let NavTag = null;
-  if(this.state.list.isLoading){
-    NavTag =  &#x3C;NowLoading&#x3E;&#x3C;/NowLoading&#x3E;
-  }else {
-    NavTag =  &#x3C;Nav list={this.state.list.items} onClick={function(id){
-      //list contents AJAX
-      let newArticle = Object.assign({}, this.state.article, {isLoading:true})
-      this.setState({article:newArticle})
-      fetch(id + &#x22;.json&#x22;)
-            .then(function(result){
-              return result.json(); 
+          const Nav = (props) =&#x3E; {
+            const listTag = props.list.map((arr) =&#x3E; (
+              &#x3C;li key={arr.id}&#x3E;
+                &#x3C;a
+                  href={arr.id}
+                  data-id={arr.id}
+                  onClick={(e) =&#x3E; {
+                    e.preventDefault();
+                    props.onChangeId(e.target.dataset.id);
+                  }}
+                &#x3E;
+                  {arr.title}
+                &#x3C;/a&#x3E;
+              &#x3C;/li&#x3E;
+            ));
+          
+            return (
+              &#x3C;nav&#x3E;
+                &#x3C;ul&#x3E;{listTag}&#x3C;/ul&#x3E;
+              &#x3C;/nav&#x3E;
+            );
+          };
+          const Article = props =&#x3E; {
+              return(
+                  &#x3C;article&#x3E;
+                      &#x3C;h2&#x3E;{props.title}&#x3C;/h2&#x3E;
+                      {props.desc}
+                  &#x3C;/article&#x3E;
+              )
+          }
+          const NowLoading = () =&#x3E; {
+              return(
+                  &#x3C;div&#x3E;Now Loading ...&#x3C;/div&#x3E;
+              )
+          }
+          const FuncAJAX = () =&#x3E; {
+            const [contents, setContents] = useState({
+              item: { title: &#x27;Welcome&#x27;, desc: &#x27;Hello, React &#x26; Ajax&#x27; },
+              isLoading: false,
+            });
+            const [list, setList] = useState({
+              items: [],
+              isLoading: false,
+            });
+            const [nowId, setNowId] = useState()
+            const onChangeId = (e) =&#x3E; {setNowId(e)}
+            useEffect(() =&#x3E; {
+              setList({...list, isLoading:true})
+              fetch(&#x27;list.json&#x27;)
+                .then((result) =&#x3E; {
+                  return result.json();
+                })
+                .then((json) =&#x3E; {
+                  setList({
+                    items: json,
+                    isLoading: false,
+                  });
+                });
+            }, []);
+          
+            console.log(nowId)
+            
+            useEffect(()=&#x3E;{
+              if(nowId){
+              setContents({...contents, isLoading:true})
+              fetch(nowId + &#x22;.json&#x22;)
+                  .then((result) =&#x3E; {
+                      return result.json(); 
+                  })
+                  .then((json) =&#x3E; {
+                  setContents({
+                      item:{
+                          title:json.title, 
+                          desc:json.desc
+                      },
+                      isLoading:false
+                  })
             })
-          .then(function(json){
-            this.setState({
+            }
+          },[nowId])
+            let ArticleTag = contents.isLoading ? &#x3C;NowLoading /&#x3E; : &#x3C;Article title={contents.item.title} desc={contents.item.desc}   /&#x3E;
+            let listTag = list.isLoading ? &#x3C;NowLoading /&#x3E; : &#x3C;Nav list={list.items} onChangeId={onChangeId} /&#x3E;
+            return (
+              &#x3C;div style={{ margin: 40, border: &#x27;1px solid #aaa&#x27;, padding: 40, paddingTop: 10 }}&#x3E;
+                  &#x3C;h1&#x3E;React AJAX - Hooks&#x3C;/h1&#x3E;
+                  {listTag}
+                  {ArticleTag}
+              &#x3C;/div&#x3E;
+            );
+          };
+          
+          export default FuncAJAX;
+          </code></pre>
+        <h2>Class AJAX</h2>
+        <pre class="line-numbers"><code class="language-javascript">import React, {Component} from &#x27;react&#x27;;
+
+          class Nav extends Component {
+            render(){
+              let listTag = [];
+              this.props.list.map(arr =&#x3E; {
+              return listTag.push(
+                  &#x3C;li key={arr.id}&#x3E;
+                  &#x3C;a href={arr.id} data-id={arr.id} onClick={function(e){
+                    e.preventDefault();
+                    this.props.onClick(e.target.dataset.id)
+                  }.bind(this)}&#x3E;
+                    {arr.title}
+                  &#x3C;/a&#x3E;
+                &#x3C;/li&#x3E;
+                )
+            })
+              return(
+                &#x3C;nav&#x3E;
+                  &#x3C;ul&#x3E;
+                    {listTag}
+                  &#x3C;/ul&#x3E;
+                &#x3C;/nav&#x3E;
+              )
+            }
+          }
+          class Article extends Component{
+            render(){
+              return(
+              &#x3C;article&#x3E;
+                &#x3C;h2&#x3E;{this.props.title}&#x3C;/h2&#x3E;
+                {this.props.desc}
+              &#x3C;/article&#x3E;
+              )}
+          }
+          class NowLoading extends Component{
+            render(){
+              return &#x3C;div&#x3E;Now Loading...&#x3C;/div&#x3E;
+            }
+          }
+          class App extends Component {
+            state = {
               article:{
-                item:{
-                  title:json.title, 
-                  desc:json.desc
+                item:{title:&#x27;Welcome&#x27;, desc:&#x22;Hello, React &#x26; Ajax&#x22;},
+                isLoading:false
               },
+              list:{
+              items:[],
               isLoading:false
               }
+            }
+          
+            componentDidMount() {
+              let newList = Object.assign({}, this.state.list, {isLoading:true});
+              this.setState({list:newList})
+              fetch(&#x27;list.json&#x27;)
+                .then(function(result){
+                  return result.json();
+                })
+                .then(function(json){
+                  this.setState({list:{
+                    items:json,
+                    isLoading:false
+                  }});
+                }.bind(this))
+            }
+            render(){
+              let NavTag = null;
+          if(this.state.list.isLoading){
+            NavTag =  &#x3C;NowLoading&#x3E;&#x3C;/NowLoading&#x3E;
+          }else {
+            NavTag =  &#x3C;Nav list={this.state.list.items} onClick={function(id){
+              //list contents AJAX
+              let newArticle = Object.assign({}, this.state.article, {isLoading:true})
+              this.setState({article:newArticle})
+              fetch(id + &#x22;.json&#x22;)
+                    .then(function(result){
+                      return result.json(); 
+                    })
+                  .then(function(json){
+                    this.setState({
+                      article:{
+                        item:{
+                          title:json.title, 
+                          desc:json.desc
+                      },
+                      isLoading:false
+                      }
+                    })
+                  }.bind(this))
+                }.bind(this)} /&#x3E;
+              }
+            let ArticleTag = null;
+            if(this.state.article.isLoading){
+              ArticleTag = &#x3C;NowLoading&#x3E;&#x3C;/NowLoading&#x3E;
+            }else{
+              ArticleTag = &#x3C;Article title={this.state.article.item.title} desc={this.state.article.item.desc} /&#x3E;
+            }
+            return (
+              &#x3C;div style={{margin:40, border:&#x22;1px solid #aaa&#x22;, padding:40,paddingTop:10}}&#x3E;
+                &#x3C;h1&#x3E;Web&#x3C;/h1&#x3E;
+                {NavTag}
+                {ArticleTag}
+              &#x3C;/div&#x3E;
+            )};
+          }
+          
+          export default App;</code></pre>
+        <h2>Class Lifecycle</h2>
+        <pre class="line-numbers"><code class="language-javascript">import React, { Component } from &#x27;react&#x27;
+          var classStyle = &#x27;color:red&#x27;;
+          
+          class ClassComp extends React.Component {
+            state = {
+              number:this.props.initNumber,
+              date:(new Date()).toString(),
+              life:&#x22;Render&#x22;
+            }
+            UNSAFE_componentWillMount(){
+              console.log(&#x27;%cclass =&#x3E; UNSAFE_componentWillMount&#x27;, classStyle)
+            }
+            componentDidMount(){
+              console.log(&#x27;%cclass =&#x3E; conponentDidMount&#x27;, classStyle)
+              
+            }
+            shouldComponentUpdate(nextProps, nextState){
+              console.log(&#x27;%cclass =&#x3E; shouldComponentUpdate&#x27;, classStyle)
+              return true
+            }
+            UNSAFE_componentWillUpdate(nextProps, nextState){
+              console.log(&#x27;%cclass =&#x3E; UNSAFE_componentWillUpdate&#x27;, classStyle)
+            }
+            componentDidUpdate(nextProps, nextState) {
+              console.log(&#x22;%cclass =&#x3E; componentDidUpdate&#x22;, classStyle)
+              
+            }
+            conponentWillUnmount(){
+              console.log(&#x22;%cclass =&#x3E; componentWillUnmount&#x22;, classStyle)
+              this.setState({life:&#x22;Update&#x22;})
+            }
+            render() {
+              console.log(&#x27;%cclass =&#x3E; render&#x27;, classStyle)
+              return(
+                &#x3C;div className=&#x22;container&#x22;&#x3E;
+                  &#x3C;h2 style={{color:&#x22;red&#x22;}}&#x3E;class style Component&#x3C;/h2&#x3E;
+                  &#x3C;p&#x3E;Class Life Cycle : {this.state.life}&#x3C;/p&#x3E;
+                  &#x3C;p&#x3E;Number: {this.state.number}&#x3C;/p&#x3E;
+                  &#x3C;p&#x3E;Time : {this.state.date}&#x3C;/p&#x3E;
+                  &#x3C;input type=&#x22;button&#x22; value=&#x22;random&#x22; onClick={function(){
+                    this.setState({number:Math.random()})
+                  }.bind(this)}/&#x3E;
+                  &#x3C;input type=&#x22;button&#x22; value=&#x22;date&#x22; onClick={function(){
+                    this.setState({date: (new Date()).toString()})
+                  }.bind(this)}/&#x3E;
+                &#x3C;/div&#x3E;
+              )
+            }
+          }
+          export default ClassComp;</code></pre>
+        <h2>Function Lifecycle</h2>
+        <pre class="line-numbers"><code class="language-javascript">import React, { useState, useEffect } from &#x27;react&#x27;;
+
+          const Nav = (props) =&#x3E; {
+            const listTag = props.list.map((arr) =&#x3E; (
+              &#x3C;li key={arr.id}&#x3E;
+                &#x3C;a
+                  href={arr.id}
+                  data-id={arr.id}
+                  onClick={(e) =&#x3E; {
+                    e.preventDefault();
+                    props.onChangeId(e.target.dataset.id);
+                  }}
+                &#x3E;
+                  {arr.title}
+                &#x3C;/a&#x3E;
+              &#x3C;/li&#x3E;
+            ));
+          
+            return (
+              &#x3C;nav&#x3E;
+                &#x3C;ul&#x3E;{listTag}&#x3C;/ul&#x3E;
+              &#x3C;/nav&#x3E;
+            );
+          };
+          const Article = props =&#x3E; {
+              return(
+                  &#x3C;article&#x3E;
+                      &#x3C;h2&#x3E;{props.title}&#x3C;/h2&#x3E;
+                      {props.desc}
+                  &#x3C;/article&#x3E;
+              )
+          }
+          const NowLoading = () =&#x3E; {
+              return(
+                  &#x3C;div&#x3E;Now Loading ...&#x3C;/div&#x3E;
+              )
+          }
+          const FuncAJAX = () =&#x3E; {
+            const [contents, setContents] = useState({
+              item: { title: &#x27;Welcome&#x27;, desc: &#x27;Hello, React &#x26; Ajax&#x27; },
+              isLoading: false,
+            });
+            const [list, setList] = useState({
+              items: [],
+              isLoading: false,
+            });
+            const [nowId, setNowId] = useState()
+            const onChangeId = (e) =&#x3E; {setNowId(e)}
+            useEffect(() =&#x3E; {
+              setList({...list, isLoading:true})
+              fetch(&#x27;list.json&#x27;)
+                .then((result) =&#x3E; {
+                  return result.json();
+                })
+                .then((json) =&#x3E; {
+                  setList({
+                    items: json,
+                    isLoading: false,
+                  });
+                });
+            }, []);
+          
+            console.log(nowId)
+            
+            useEffect(()=&#x3E;{
+              if(nowId){
+              setContents({...contents, isLoading:true})
+              fetch(nowId + &#x22;.json&#x22;)
+                  .then((result) =&#x3E; {
+                      return result.json(); 
+                  })
+                  .then((json) =&#x3E; {
+                  setContents({
+                      item:{
+                          title:json.title, 
+                          desc:json.desc
+                      },
+                      isLoading:false
+                  })
             })
-          }.bind(this))
-        }.bind(this)} /&#x3E;
-      }
-    let ArticleTag = null;
-    if(this.state.article.isLoading){
-      ArticleTag = &#x3C;NowLoading&#x3E;&#x3C;/NowLoading&#x3E;
-    }else{
-      ArticleTag = &#x3C;Article title={this.state.article.item.title} desc={this.state.article.item.desc} /&#x3E;
-    }
-    return (
-      &#x3C;div style={{margin:40, border:&#x22;1px solid #aaa&#x22;, padding:40,paddingTop:10}}&#x3E;
-        &#x3C;h1&#x3E;Web&#x3C;/h1&#x3E;
-        {NavTag}
-        {ArticleTag}
-      &#x3C;/div&#x3E;
-    )};
-  }
-  
-  export default App;
-  </code></pre>
+            }
+          },[nowId])
+            let ArticleTag = contents.isLoading ? &#x3C;NowLoading /&#x3E; : &#x3C;Article title={contents.item.title} desc={contents.item.desc}   /&#x3E;
+            let listTag = list.isLoading ? &#x3C;NowLoading /&#x3E; : &#x3C;Nav list={list.items} onChangeId={onChangeId} /&#x3E;
+            return (
+              &#x3C;div style={{ margin: 40, border: &#x27;1px solid #aaa&#x27;, padding: 40, paddingTop: 10 }}&#x3E;
+                  &#x3C;h1&#x3E;React AJAX - Hooks&#x3C;/h1&#x3E;
+                  {listTag}
+                  {ArticleTag}
+              &#x3C;/div&#x3E;
+            );
+          };
+          
+          export default FuncAJAX;
+          </code></pre>
         </div>
     </section>
 
