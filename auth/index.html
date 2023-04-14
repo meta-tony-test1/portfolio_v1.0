@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Facebook Log</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com">
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script>
+        var checkLoginStatus = function(response) {
+            console.log(response);
+            // statusChangeCallback(response);
+            // log Status Action
+            if(response.status === 'connected'){
+                document.querySelector('#authBth').value = 'Logout';
+                FB.api('/me',function(resp){
+                    document.querySelector('#name').innerHTML = 'Welcome' + resp.name;
+                });
+            }else {
+                document.querySelector('#authBth').value = 'Login'
+                document.querySelector('#name').innerHTML = ''
+            }
+        }
+
+        window.fbAsyncInit = function() {
+        FB.init({
+        appId      : '227444963203889',
+        cookie     : true,                     // Enable cookies to allow the server to access the session.
+        xfbml      : true,                     // Parse social plugins on this webpage.
+        version    : 'v16.0'           // Use this Graph API version for this call.
+        });
+        FB.getLoginStatus(checkLoginStatus)
+    };
+    
+    function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+        console.log('Successful login for: ' + response.name);
+        document.getElementById('status').innerHTML =
+            'Thanks for logging in, ' + response.name + '!';
+        });
+    }  
+        //google
+            function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+    </script>
+
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v16.0&appId=227444963203889&autoLogAppEvents=1" nonce="Mb0bGD3B"></script>
+    <input type="button" id="authBth" value="Checking..." onclick="
+        if(this.value === 'Login'){
+        //now Logout
+        FB.login(function(res){
+            console.log('login => ', res)
+            checkLoginStatus(res);
+        })
+        }else {
+        //now login
+        FB.logout(function(res){
+            console.log('logout => ', res)
+            checkLoginStatus(res);
+        })
+        }
+    " class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false" /> 
+    <span id="name"></span>
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+    </ol>
+    <h2>Web</h2>
+
+    <hr />
+    <div class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false"></div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+</body>
+</html>
