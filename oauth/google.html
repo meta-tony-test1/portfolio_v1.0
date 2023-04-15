@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google API</title>
+  <title>Google API -1</title>
   <!-- 클라이언트 라이브러리 -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script>
     //ID configuration, 버튼 렌더링
     function handleCredentialResponse(response) {
       console.log("Encoded JWT ID token: " + response.credential);
+      const responsePayload = decodeJwtResponse(response.credential);
+      console.log(responsePayload)
+      console.log("ID: " + responsePayload.sub);
+      console.log('Full Name: ' + responsePayload.name);
+      console.log('Given Name: ' + responsePayload.given_name);
+      console.log('Family Name: ' + responsePayload.family_name);
+      console.log("Image URL: " + responsePayload.picture);
+      console.log("Email: " + responsePayload.email);
     }
     window.onload = function () {
       google.accounts.id.initialize({
@@ -21,28 +29,15 @@
         document.getElementById("buttonDiv"),
         { theme: "outline", size: "large" }  // customization attributes
       );
-
       google.accounts.id.prompt(); // OneTap
-
     }
+
     //log out
     const button = document.getElementById('signout_button');
     button.onclick = () => {
       google.accounts.id.disableAutoSelect();
     }
 
-    function handleCredentialResponse(response) {
-     // decodeJwtResponse() is a custom function defined by you
-     // to decode the credential response.
-     const responsePayload = decodeJwtResponse(response.credential);
-     console.log(responsePayload)
-     console.log("ID: " + responsePayload.sub);
-     console.log('Full Name: ' + responsePayload.name);
-     console.log('Given Name: ' + responsePayload.given_name);
-     console.log('Family Name: ' + responsePayload.family_name);
-     console.log("Image URL: " + responsePayload.picture);
-     console.log("Email: " + responsePayload.email);
-    }
   </script>
 </head>
 <body>
@@ -62,7 +57,7 @@
   </div>
   <hr />
   <h3>로그아웃 테스트</h3>
-  <div class="g_id_signout">Sign Out</div>
+  <button class="g_id_signout" id="signout_button"></button>
 
 </body>
 </html>
