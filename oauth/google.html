@@ -6,39 +6,32 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="151386553094-9b8qtt1relctfde382jm596kjdemv0k4.apps.googleusercontent.com">
 
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
-        window.onload = function () {
+      function handleCredentialResponse(response) {
+        console.log("Encoded JWT ID token: " + response.credential);
+      }
+      window.onload = function () {
         google.accounts.id.initialize({
-          client_id: '151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com',
+          client_id: "YOUR_GOOGLE_CLIENT_ID",
           callback: handleCredentialResponse
         });
-        google.accounts.id.prompt();
+        google.accounts.id.renderButton(
+          document.getElementById("buttonDiv"),
+          { theme: "outline", size: "large" }  // customization attributes
+        );
+        google.accounts.id.prompt(); // also display the One Tap dialog
       }
-
-      function handleCredentialResponse(response) {
-        // decodeJwtResponse() is a custom function defined by you
-        // to decode the credential response.
-        const responsePayload = decodeJwtResponse(response.credential);
-
-        console.log("ID: " + responsePayload.sub);
-        console.log('Full Name: ' + responsePayload.name);
-        console.log('Given Name: ' + responsePayload.given_name);
-        console.log('Family Name: ' + responsePayload.family_name);
-        console.log("Image URL: " + responsePayload.picture);
-        console.log("Email: " + responsePayload.email);
-      }
-    </script>
+  </script>
 </head>
 <body>
     <h2>Google Log</h2>
     <hr />
     <p>기본 UI</p>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    
+
     <p>JS library</p>
-    <div id="g_id_onload"
-     data-client_id="151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com"
-     data-callback="handleCredentialResponse">
-    </div>
+
+    <span id="buttonDiv"></span> 
 </body>
 </html>

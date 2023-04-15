@@ -1,3 +1,8 @@
 구글 API
-https://developers.google.com/identity/sign-in/web/sign-in?hl=ko
-151386553094-9b8qtt1relctfde382jm596kjdemv0k4.apps.googleusercontent.com
+
+1. API인증
+2. 로그인 API
+3. 인증설정
+- Google API 플랫폼 라이브러리를 로드하여 gapi 객체를 만듭니다.
+- 플랫폼 라이브러리가 로드된 후 auth2 라이브러리를 로드합니다.
+- gapi.auth2.init(params)
