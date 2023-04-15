@@ -21,24 +21,24 @@
         document.getElementById("buttonDiv"),
         { theme: "outline", size: "large" }  // customization attributes
       );
-      google.accounts.id.prompt(); // also display the One Tap dialog
-    }
 
-/*     
-    
-    window.onload = function () {
-      google.accounts.id.initialize({
-        client_id: '151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com',
-        callback: handleCredentialResponse
-      });
-      google.accounts.id.prompt();
-    } 
-*/
+      google.accounts.id.prompt(); // OneTap
+
+      // decodeJwtResponse() is a custom function defined by you
+      // to decode the credential response.
+      const responsePayload = decodeJwtResponse(response.credential);
+      console.log("ID: " + responsePayload.sub);
+      console.log('Full Name: ' + responsePayload.name);
+      console.log('Given Name: ' + responsePayload.given_name);
+      console.log('Family Name: ' + responsePayload.family_name);
+      console.log("Image URL: " + responsePayload.picture);
+      console.log("Email: " + responsePayload.email);
+    }
   </script>
 </head>
 <body>
   <h1>Google Log</h1>
   <hr>
-  <div id="buttonDiv"></div> 
+  <div id="buttonDiv" style="width:400px;"></div> 
 </body>
 </html>
