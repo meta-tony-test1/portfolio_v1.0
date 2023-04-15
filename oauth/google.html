@@ -23,6 +23,12 @@
       );
 
       google.accounts.id.prompt(); // OneTap
+
+    }
+    //log out
+    const button = document.getElementById('signout_button');
+    button.onclick = () => {
+      google.accounts.id.disableAutoSelect();
     }
   </script>
 </head>
@@ -30,11 +36,19 @@
   <h1>Google Log</h1>
   <input type="button" onclick="">
   <hr>
+  <p>buttonDiv</p>
   <div id="buttonDiv" style="width:400px;"></div> 
+
+  <p>#g_id_onload (data-callback="handleCredentialResponse)</p>
+  <!-- 자동 로그인: data-auto_select="true" -->
   <div id="g_id_onload"
      data-client_id="151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com"
      data-callback="handleCredentialResponse">
-</div>
+  </div>
+  <hr />
+  <h3>로그아웃 테스트</h3>
+  <div class="g_id_signout">Sign Out</div>
+
 <script>
   function handleCredentialResponse(response) {
      // decodeJwtResponse() is a custom function defined by you
