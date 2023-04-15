@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google API -1</title>
+  <title>Google API -2</title>
   <!-- 클라이언트 라이브러리 -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script>
@@ -31,13 +31,6 @@
       );
       google.accounts.id.prompt(); // OneTap
     }
-
-    //log out
-    const button = document.getElementById('signout_button');
-    button.onclick = () => {
-      google.accounts.id.disableAutoSelect();
-    }
-
   </script>
 </head>
 <body>
@@ -48,16 +41,9 @@
   <hr>
   <p>buttonDiv</p>
   <div id="buttonDiv" style="width:400px;"></div> 
-
-  <p>#g_id_onload (data-callback="handleCredentialResponse)</p>
-  <!-- 자동 로그인: data-auto_select="true" -->
-  <div id="g_id_onload"
-     data-client_id="151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com"
-     data-callback="handleCredentialResponse">
-  </div>
   <hr />
   <h3>로그아웃 테스트</h3>
-  <button class="g_id_signout" id="signout_button"></button>
+  <button id="signout_button" class="g_id_signout" onclick="google.accounts.id.disableAutoSelect()"></button>
 
 </body>
 </html>
