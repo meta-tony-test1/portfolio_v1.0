@@ -9,23 +9,29 @@
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script>
     //ID configuration, 버튼 렌더링
-    var ownerinfo = function(response) {
+    function ownerInfo(response) {
       console.log("Encoded JWT ID token: " + response.credential);
+      console.log("ID: " + response.credential.sub);
+      console.log('Full Name: ' + response.credential.name);
+      console.log('Given Name: ' + response.credential.given_name);
+      console.log('Family Name: ' + response.credential.family_name);
+      console.log("Image URL: " + response.credential.picture);
+      console.log("Email: " + response.credential.email);
+      
+/*       const responsePayload = decodeJwtResponse(response.credential);
       console.log(responsePayload)
       console.log("ID: " + responsePayload.sub);
       console.log('Full Name: ' + responsePayload.name);
       console.log('Given Name: ' + responsePayload.given_name);
       console.log('Family Name: ' + responsePayload.family_name);
       console.log("Image URL: " + responsePayload.picture);
-      console.log("Email: " + responsePayload.email);
+      console.log("Email: " + responsePayload.email); */
     }
-
     window.onload = function () {
       google.accounts.id.initialize({
         client_id: "151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com",
-        callback: ownerinfo
+        callback: ownerInfo
       });
-      
       google.accounts.id.renderButton(
         document.getElementById("buttonDiv"),
         { theme: "outline", size: "large" }  // customization attributes
@@ -39,11 +45,11 @@
   <input type="button" value="checking..." onclick="
     console.log('check')
   ">
+  
   <hr>
-  <p>로그인</p>
   <div id="buttonDiv" style="width:400px;"></div>
+
   <hr />
-  <h3>로그아웃 테스트</h3>
   <input type="button" id="signout_button" class="g_id_signout" onclick="
   google.accounts.id.disableAutoSelect()" 
   value="로그아웃"></input>
