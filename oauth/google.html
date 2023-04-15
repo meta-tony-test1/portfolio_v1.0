@@ -4,33 +4,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google API -2</title>
+  <title>Google API</title>
   <!-- 클라이언트 라이브러리 -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script>
+
+
     //ID configuration, 버튼 렌더링
-    function ownerInfo(response) {
-      console.log("Encoded JWT ID token: " + response.credential);
-      console.log("ID: " + response.credential.sub);
-      console.log('Full Name: ' + response.credential.name);
-      console.log('Given Name: ' + response.credential.given_name);
-      console.log('Family Name: ' + response.credential.family_name);
-      console.log("Image URL: " + response.credential.picture);
-      console.log("Email: " + response.credential.email);
-      
-/*       const responsePayload = decodeJwtResponse(response.credential);
-      console.log(responsePayload)
-      console.log("ID: " + responsePayload.sub);
-      console.log('Full Name: ' + responsePayload.name);
-      console.log('Given Name: ' + responsePayload.given_name);
-      console.log('Family Name: ' + responsePayload.family_name);
-      console.log("Image URL: " + responsePayload.picture);
-      console.log("Email: " + responsePayload.email); */
-    }
+    function handleCredentialResponse(response) {
+     // decodeJwtResponse() is a custom function defined by you
+     // to decode the credential response.
+     const responsePayload = decodeJwtResponse(response.credential);
+
+     console.log("ID: " + responsePayload.sub);
+     console.log('Full Name: ' + responsePayload.name);
+     console.log('Given Name: ' + responsePayload.given_name);
+     console.log('Family Name: ' + responsePayload.family_name);
+     console.log("Image URL: " + responsePayload.picture);
+     console.log("Email: " + responsePayload.email);
+  }
     window.onload = function () {
       google.accounts.id.initialize({
         client_id: "151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com",
-        callback: ownerInfo
       });
       google.accounts.id.renderButton(
         document.getElementById("buttonDiv"),
@@ -41,9 +36,9 @@
   </script>
 </head>
 <body>
-  <h1>Google Log</h1>
+  <h1>Google Log - 2</h1>
   <input type="button" value="checking..." onclick="
-    console.log('check')
+    ownerInfo(response);
   ">
   
   <hr>
