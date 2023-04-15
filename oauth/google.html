@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>google-API</title>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="151386553094-9b8qtt1relctfde382jm596kjdemv0k4.apps.googleusercontent.com">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google API</title>
+  <!-- 클라이언트 라이브러리 -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    //ID configuration, 버튼 렌더링
+    function handleCredentialResponse(response) {
+      console.log("Encoded JWT ID token: " + response.credential);
+    }
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: "151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com",
+        callback: handleCredentialResponse
+      });
+      google.accounts.id.renderButton(
+        document.getElementById("buttonDiv"),
+        { theme: "outline", size: "large" }  // customization attributes
+      );
+      google.accounts.id.prompt(); // also display the One Tap dialog
+    }
 
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script>
-      function handleCredentialResponse(response) {
-        console.log("Encoded JWT ID token: " + response.credential);
-      }
-      window.onload = function () {
-        google.accounts.id.initialize({
-          client_id: "YOUR_GOOGLE_CLIENT_ID",
-          callback: handleCredentialResponse
-        });
-        google.accounts.id.renderButton(
-          document.getElementById("buttonDiv"),
-          { theme: "outline", size: "large" }  // customization attributes
-        );
-        google.accounts.id.prompt(); // also display the One Tap dialog
-      }
+/*     
+    
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: '151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com',
+        callback: handleCredentialResponse
+      });
+      google.accounts.id.prompt();
+    } 
+*/
   </script>
 </head>
 <body>
-    <h2>Google Log</h2>
-    <hr />
-    <p>기본 UI</p>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-    <p>JS library</p>
-
-    <span id="buttonDiv"></span> 
+  <h1>Google Log</h1>
+  <hr>
+  <div id="buttonDiv"></div> 
 </body>
 </html>
