@@ -23,22 +23,30 @@
       );
 
       google.accounts.id.prompt(); // OneTap
-
-      // decodeJwtResponse() is a custom function defined by you
-      // to decode the credential response.
-      const responsePayload = decodeJwtResponse(response.credential);
-      console.log("ID: " + responsePayload.sub);
-      console.log('Full Name: ' + responsePayload.name);
-      console.log('Given Name: ' + responsePayload.given_name);
-      console.log('Family Name: ' + responsePayload.family_name);
-      console.log("Image URL: " + responsePayload.picture);
-      console.log("Email: " + responsePayload.email);
     }
   </script>
 </head>
 <body>
   <h1>Google Log</h1>
+  <input type="button" onclick="">
   <hr>
   <div id="buttonDiv" style="width:400px;"></div> 
+  <div id="g_id_onload"
+     data-client_id="151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com"
+     data-callback="handleCredentialResponse">
+</div>
+<script>
+  function handleCredentialResponse(response) {
+     // decodeJwtResponse() is a custom function defined by you
+     // to decode the credential response.
+     const responsePayload = decodeJwtResponse(response.credential);
+     console.log("ID: " + responsePayload.sub);
+     console.log('Full Name: ' + responsePayload.name);
+     console.log('Given Name: ' + responsePayload.given_name);
+     console.log('Family Name: ' + responsePayload.family_name);
+     console.log("Image URL: " + responsePayload.picture);
+     console.log("Email: " + responsePayload.email);
+  }
+</script>
 </body>
 </html>
