@@ -9,7 +9,7 @@
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script>
     //ID configuration, 버튼 렌더링
-    function handleCredentialResponse(response) {
+    var ownerinfo = function(response) {
       console.log("Encoded JWT ID token: " + response.credential);
       console.log(responsePayload)
       console.log("ID: " + responsePayload.sub);
@@ -19,11 +19,13 @@
       console.log("Image URL: " + responsePayload.picture);
       console.log("Email: " + responsePayload.email);
     }
+
     window.onload = function () {
       google.accounts.id.initialize({
         client_id: "151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com",
-        callback: handleCredentialResponse
+        callback: ownerinfo
       });
+      
       google.accounts.id.renderButton(
         document.getElementById("buttonDiv"),
         { theme: "outline", size: "large" }  // customization attributes
