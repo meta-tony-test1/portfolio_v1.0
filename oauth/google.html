@@ -11,7 +11,6 @@
     //ID configuration, 버튼 렌더링
     function handleCredentialResponse(response) {
       console.log("Encoded JWT ID token: " + response.credential);
-      const responsePayload = decodeJwtResponse(response.credential);
       console.log(responsePayload)
       console.log("ID: " + responsePayload.sub);
       console.log('Full Name: ' + responsePayload.name);
@@ -39,11 +38,13 @@
     console.log('check')
   ">
   <hr>
-  <p>buttonDiv</p>
-  <div id="buttonDiv" style="width:400px;"></div> 
+  <p>로그인</p>
+  <div id="buttonDiv" style="width:400px;"></div>
   <hr />
   <h3>로그아웃 테스트</h3>
-  <button id="signout_button" class="g_id_signout" onclick="google.accounts.id.disableAutoSelect()"></button>
+  <input type="button" id="signout_button" class="g_id_signout" onclick="
+  google.accounts.id.disableAutoSelect()" 
+  value="로그아웃"></input>
 
 </body>
 </html>
