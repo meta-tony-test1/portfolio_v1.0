@@ -19,7 +19,7 @@
   <input type="button" id="signout_button" class="g_id_signout" onclick="google.accounts.id.disableAutoSelect()" value="로그아웃">
   
   <script>
-    function handleClick() {
+    function handleClick(handleCredentialResponse) {
       google.accounts.id.prompt();
     }
 
