@@ -17,9 +17,9 @@
     }
     function handleClick() {
       google.accounts.id.prompt();
-      handleCredentialResponse;
+      handle;
     }
-    function handleCredentialResponse(response) {
+    function handle(response) {
       const responsePayload = decodeJwtResponse(response.credential);
       console.log("ID: " + responsePayload.sub);
       console.log('Full Name: ' + responsePayload.name);
