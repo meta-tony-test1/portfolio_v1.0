@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>Google Log - Script</h1>
-  <p><input type="button" value="Check" onclick="handleClick()"></p>
+  <p><input type="button" value="Check" onclick="handle()"></p>
   
   <script>
     window.onload = function () {
@@ -15,11 +15,8 @@
         client_id: "151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com",
       });
     }
-    function handleClick() {
-      google.accounts.id.prompt();
-      handle;
-    }
     function handle(response) {
+      google.accounts.id.prompt();
       const responsePayload = decodeJwtResponse(response.credential);
       console.log("ID: " + responsePayload.sub);
       console.log('Full Name: ' + responsePayload.name);
