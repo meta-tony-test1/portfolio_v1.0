@@ -3,25 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Google API - Script</title>
-  <!-- 클라이언트 라이브러리 -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
   <h1>Google Log - Script</h1>
   <p><input type="button" value="Check" onclick="handleClick()"></p>
   
-  <div id="buttonDiv" style="width:400px;"></div>
-  
   <script>
     window.onload = function () {
       google.accounts.id.initialize({
         client_id: "151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com",
       });
-      // renderButton는 내장함수
-      google.accounts.id.renderButton(
-        document.getElementById("buttonDiv"),
-        { theme: "outline", size: "large" } , 
-      );
     }
     
     function handleClick() {
