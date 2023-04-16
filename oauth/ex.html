@@ -11,10 +11,14 @@
             
         <script>
         function handleCredentialResponse(response) {
-            // decodeJwtResponse() is a custom function defined by you
-            // to decode the credential response.
-            const responsePayload = parseJwt(response.credential);
+            
+            console.log('response : '+response);
+            console.log('response.credential : '+response.credential);
 
+            // 기존 decodeJwtResponse()
+            const responsePayload = parseJwt (response.credential);
+            // Check Key & value
+            console.log("responsePayload : " + responsePayload)
             console.log("ID: " + responsePayload.sub);
             console.log('Full Name: ' + responsePayload.name);
             console.log('Given Name: ' + responsePayload.given_name);
@@ -22,17 +26,28 @@
             console.log("Image URL: " + responsePayload.picture);
             console.log("Email: " + responsePayload.email); 
         };
-
+        //JWT to JSON
         function parseJwt (token) {
+            // JWT의 세 부분 중 두 번째 부분인 payload 부분을 가져옵니다.
             var base64Url = token.split('.')[1];
+            /*
+             * URL-Safe Base64 인코딩을 표준 Base64 인코딩으로 변환합니다. 
+             * JWT 토큰은 base64url 인코딩 방식으로 인코딩되어 있으며, 이를 디코딩하여 JSON 형태로 변환하는 것이 목적입니다. base64url 인코딩 방식은 base64 인코딩 방식과 약간의 차이가 있습니다. base64url 인코딩 방식에서는 +와 / 문자를 -와 _로 대체하여 사용합니다.
+             * base64Url 변수에서 - 문자를 + 문자로 대체하고, _ 문자를 / 문자로 대체하여 base64 변수에 할당하는 작업이 수행됩니다.
+            */ 
             var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            /*
+              * 디코딩하여 원래의 JSON 문자열을 가져옵니다. 이때, decodeURIComponent() 함수와 atob() 함수를 사용합니다.
+              * 디코딩된 문자열에서 URL-Safe 문자열을 원래의 문자열로 변환합니다. 
+              * % 기호를 사용하여 인코딩된 문자열을 decodeURIComponent() 함수를 사용하여 디코딩하는 방식으로 수행됩니다. 
+              * 변환된 문자열을 jsonPayload 변수에 할당합니다.
+            */
             var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
                 return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
             }).join(''));
-
+            //JSON.parse() 함수를 사용하여 jsonPayload 문자열을 JSON 객체로 변환 후 반환합니다.
             return JSON.parse(jsonPayload);
-        };
-
+        };      
         </script>
     </body>
 </html>

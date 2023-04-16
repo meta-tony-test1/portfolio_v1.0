@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google API</title>
+  <!-- 클라이언트 라이브러리 -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <h1>Google Log - 2</h1>
+  <input type="button" value="Check" onclick="handleClick()">
+  
+  <hr>
+  <div id="buttonDiv" style="width:400px;"></div>
+
+  <hr />
+  <input type="button" id="signout_button" class="g_id_signout" onclick="google.accounts.id.disableAutoSelect()" value="로그아웃">
+  
+  <script>
+    function handleClick() {
+      google.accounts.id.prompt();
+    }
+
+    function handleCredentialResponse(response) {
+      const responsePayload = decodeJwtResponse(response.credential);
+
+      console.log("ID: " + responsePayload.sub);
+      console.log('Full Name: ' + responsePayload.name);
+      console.log('Given Name: ' + responsePayload.given_name);
+      console.log('Family Name: ' + responsePayload.family_name);
+      console.log("Image URL: " + responsePayload.picture);
+      console.log("Email: " + responsePayload.email);
+    }
+
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: "151386553094-gol5hbsdsdbpdikue9asb5ob10esv6kl.apps.googleusercontent.com",
+      });
+      google.accounts.id.renderButton(
+        document.getElementById("buttonDiv"),
+        { theme: "outline", size: "large" } 
+      );
+    }
+  </script>
+</body>
+</html>

@@ -7,9 +7,22 @@
   <title>Google API</title>
   <!-- 클라이언트 라이브러리 -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <h1>Google Log - 2</h1>
+  <input type="button" value="checking..." onclick="
+    ownerInfo(response);
+  ">
+  
+  <hr>
+  <div id="buttonDiv" style="width:400px;"></div>
+
+  <hr />
+  <input type="button" id="signout_button" class="g_id_signout" onclick="
+  google.accounts.id.disableAutoSelect()" 
+  value="로그아웃"></input>
+  
   <script>
-
-
     //ID configuration, 버튼 렌더링
     function handleCredentialResponse(response) {
      // decodeJwtResponse() is a custom function defined by you
@@ -34,20 +47,5 @@
       google.accounts.id.prompt(); // OneTap
     }
   </script>
-</head>
-<body>
-  <h1>Google Log - 2</h1>
-  <input type="button" value="checking..." onclick="
-    ownerInfo(response);
-  ">
-  
-  <hr>
-  <div id="buttonDiv" style="width:400px;"></div>
-
-  <hr />
-  <input type="button" id="signout_button" class="g_id_signout" onclick="
-  google.accounts.id.disableAutoSelect()" 
-  value="로그아웃"></input>
-
 </body>
 </html>

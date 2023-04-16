@@ -1,8 +1,0 @@
-구글 API
-
-1. API인증
-2. 로그인 API
-3. 인증설정
-- Google API 플랫폼 라이브러리를 로드하여 gapi 객체를 만듭니다.
-- 플랫폼 라이브러리가 로드된 후 auth2 라이브러리를 로드합니다.
-- gapi.auth2.init(params)
