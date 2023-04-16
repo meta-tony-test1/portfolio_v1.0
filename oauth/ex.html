@@ -12,14 +12,12 @@
         <div class="g_id_signin" data-type="icon" data-shape="circle" ></div>
             
         <script>
+        //첫번째 인자는 JWT값을 인자로 받음
         function handleCredentialResponse(response) {
-            
+            const responsePayload = parseJwt (response.credential);            
+            // Check Key & value
             console.log('response : '+response);
             console.log('response.credential : '+response.credential);
-
-            // 기존 decodeJwtResponse()
-            const responsePayload = parseJwt (response.credential);
-            // Check Key & value
             console.log("responsePayload : " + responsePayload)
             console.log("ID: " + responsePayload.sub);
             console.log('Full Name: ' + responsePayload.name);
