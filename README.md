@@ -1,11 +1,11 @@
 # portfolio_v1.0
 22.03.10 ~ 22.09.01 학원에서 퍼블리싱을 배우고 개인적으로 만든 포트폴리오입니다.
 
+## [포트폴리오 노션 링크](https://stump-smartphone-024.notion.site/QA-JavaScript-NodeJS-C-C-C-python-19af398452c380b3b02bf292ddf0498e?pvs=4)
+
 - [1.0 포트폴리오 링크](https://tony96kimsh.github.io/portfolio_v1.0/)
 
-- [2.0 포트폴리오 깃링크](https://github.com/tony96kimsh/gloveproject)
-
-- [포트폴리오 노션 링크](https://stump-smartphone-024.notion.site/QA-JavaScript-NodeJS-C-C-C-python-19af398452c380b3b02bf292ddf0498e?pvs=4)
+- [2.0 포트폴리오 깃허브 링크](https://github.com/tony96kimsh/gloveproject)
 
 # 🌐 meta-tony-test 1.0
 
@@ -25,13 +25,12 @@
 - JavaScript( jQuery, React )
 - HTML, CSS
 - photoshop, illustration
-- QA 실무(1년 6개월) - JIRA. Figma, Slack, Excel, Swagger(JSON)
+- QA 실무(1년 8개월) - JIRA. Figma, Slack, Excel, Swagger(JSON)
 
-## QA업무 23.05 - 24.01
+## QA업무 23.05 - 24.01 (1년 8개월)
 
-![image.png](imgReadMe/image%2033.png)
-
-![image.png](imgReadMe/image%2034.png)
+![image.png](imgReadMe/image%2033.png) | ![image.png](imgReadMe/image%2032.png) | ![image.png](imgReadMe/image%2034.png)
+--|--|--|
 
 ## React Basic Study
 
