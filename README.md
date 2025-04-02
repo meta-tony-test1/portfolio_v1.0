@@ -1,11 +1,13 @@
 # portfolio_v1.0
-22.03.10 ~ 22.09.01 학원에서 퍼블리싱을 배우고 개인적으로 만든 포트폴리오입니다.
+22.03.10 ~ 22.09.01 퍼블리싱을 연습하며 만든 첫 포트폴리오입니다.
 
-## [포트폴리오 노션 링크](https://stump-smartphone-024.notion.site/QA-JavaScript-NodeJS-C-C-C-python-19af398452c380b3b02bf292ddf0498e?pvs=4)
+- [포트폴리오 노션 링크](https://stump-smartphone-024.notion.site/QA-JavaScript-NodeJS-C-C-C-python-19af398452c380b3b02bf292ddf0498e?pvs=4)
 
-- [1.0 포트폴리오 링크](https://tony96kimsh.github.io/portfolio_v1.0/)
+- [1.0 포트폴리오 웹 사이트 링크](https://tony96kimsh.github.io/portfolio_v1.0/)
 
 - [2.0 포트폴리오 깃허브 링크](https://github.com/tony96kimsh/gloveproject)
+
+<br><br><br>
 
 # 🌐 meta-tony-test 1.0
 
@@ -15,10 +17,10 @@
 ![image.png](imgReadMe/image%2030.png) | ![image.png](imgReadMe/image%2031.png)
 --|--|
 
-> [Project Link](https://tony96kimsh.github.io/portfolio_v1.0/portfolio.html)
-> 
+ [Project Link](https://tony96kimsh.github.io/portfolio_v1.0/portfolio.html)
+ 
 
-사용 언어 및 툴
+## 사용 언어 및 툴
 
 - JavaScript( jQuery, React )
 - HTML, CSS
@@ -31,9 +33,8 @@
 --|--|--|
 
 ## React Basic Study
-
-![react basic.png](imgReadMe/react_basic.png)
-
+- 프론트엔드 리액트(강남 이젠아카데미 22.09 - 22.12)
+- 바닐라 자바스크립트(강남 이젠아카데미  22.09 - 22.12)
 - 블로그 일지 - [link](https://meta-tony.tistory.com/61)
 - 프로그램 실행 - [link](https://tony96kimsh.github.io/portfolio_v1.0/list/js2.html)
 - React class과 React function 문법으로 fetch-API 구현
@@ -88,7 +89,7 @@
 - CSS를 통한 슬라이드 UI 구현
 - 파비콘 로고 구현
 
-## 웹, 앱 디자인 (4개)
+## 웹, 앱 디자인
 
 ### 1. 화상영어 앱 디자인 “Hello! Langth”
 
