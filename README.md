@@ -144,8 +144,5 @@
 
 ## 🎨 회사 경험 ZARAHOME 매장 관리직
 
-![image.png](imgReadMe/image%2060.png)
-
-![image.png](imgReadMe/image%2061.png)
-
-![image.png](imgReadMe/image%2062.png)
+![image.png](imgReadMe/image%2060.png) | ![image.png](imgReadMe/image%2061.png) | ![image.png](imgReadMe/image%2062.png)
+--|--|--|
