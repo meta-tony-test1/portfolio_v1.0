@@ -1,8 +1,11 @@
 # portfolio_v1.0
 22.03.10 ~ 22.09.01 학원에서 퍼블리싱을 배우고 개인적으로 만든 포트폴리오입니다.
-[1.0 포트폴리오 링크](https://tony96kimsh.github.io/portfolio_v1.0/)
-[2.0 포트폴리오 깃링크](https://github.com/tony96kimsh/gloveproject)
-[포트폴리오 노션 링크](https://stump-smartphone-024.notion.site/QA-JavaScript-NodeJS-C-C-C-python-19af398452c380b3b02bf292ddf0498e?pvs=4)
+
+- [1.0 포트폴리오 링크](https://tony96kimsh.github.io/portfolio_v1.0/)
+
+- [2.0 포트폴리오 깃링크](https://github.com/tony96kimsh/gloveproject)
+
+- [포트폴리오 노션 링크](https://stump-smartphone-024.notion.site/QA-JavaScript-NodeJS-C-C-C-python-19af398452c380b3b02bf292ddf0498e?pvs=4)
 
 # 🌐 meta-tony-test 1.0
 
@@ -68,7 +71,7 @@
 - jQuery 코드 - [Link](https://tony96kimsh.github.io/copy_KB_bank/js/script.js)
     - 슬라이드 및 애니메이션 구현
     - 스크롤에 따른 반응 구현
-- 제작일지 [blog](https://velog.io/@tonyisback/001day-%EC%9B%B9%EC%B9%B4%ED%94%BC-KB%EC%B9%B4%EB%93%9C) / [github](https://github.com/meta-tony-test1/copy_KB_bank.git)
+- 제작일지 [blog](https://velog.io/@tonyisback/001day-%EC%9B%B9%EC%B9%B4%ED%94%BC-KB%EC%B9%B4%EB%93%9C) / [github](https://github.com/tony96kimsh/copy_KB_bank.git)
 
 ## 웹사이트 마크업, 디자인 (2개)
 
