@@ -18,7 +18,8 @@
 --|--|
 
  [Project Link](https://tony96kimsh.github.io/portfolio_v1.0/portfolio.html)
- 
+
+ <br><br>
 
 ## 사용 언어 및 툴
 
@@ -27,10 +28,14 @@
 - photoshop, illustration
 - QA 실무(1년 8개월) - JIRA. Figma, Slack, Excel, Swagger(JSON)
 
+<br><br>
+
 ## QA업무 23.05 - 24.01 (1년 8개월)
 
 ![image.png](imgReadMe/image%2033.png) | ![image.png](imgReadMe/image%2032.png) | ![image.png](imgReadMe/image%2034.png)
 --|--|--|
+
+<br><br>
 
 ## React Basic Study
 - 프론트엔드 리액트(강남 이젠아카데미 22.09 - 22.12)
@@ -39,6 +44,8 @@
 - 프로그램 실행 - [link](https://tony96kimsh.github.io/portfolio_v1.0/list/js2.html)
 - React class과 React function 문법으로 fetch-API 구현
 - class와 function 각각의 lifecycle method 사용
+
+<br><br>
 
 ## jQuery
 
@@ -65,6 +72,8 @@
     - 스크롤에 따른 반응 구현
 - 제작일지 [blog](https://velog.io/@tonyisback/001day-%EC%9B%B9%EC%B9%B4%ED%94%BC-KB%EC%B9%B4%EB%93%9C) / [github](https://github.com/tony96kimsh/copy_KB_bank.git)
 
+<br><br>
+
 ## 웹사이트 마크업, 디자인 (2개)
 
 ### 1. 🎨대성 홀딩스
@@ -88,6 +97,8 @@
 - 성형외과의 사용자 니즈에 맞춘 트랜디한 계절감을 살린 웹 사이트 디자인 및 웹 표준 제작
 - CSS를 통한 슬라이드 UI 구현
 - 파비콘 로고 구현
+
+<br><br>
 
 ## 웹, 앱 디자인
 
@@ -133,6 +144,8 @@
 
 - 제작 사이트 - [link](https://tony96kimsh.github.io/portfolio_v1.0/list/wd-4.html)
 
+<br><br>
+
 ## 📚컴퓨터과학 1~2학년 수료
 
 1학년 1학기: 컴퓨터의 이해, 사진의이해, 유비쿼터스컴퓨팅개론, **파이썬프로그래밍기초**, **C프로그래밍**, 데이터정보처리입문
@@ -142,6 +155,8 @@
 2학년 1학기: 한국사의이해, 생명과환경, 이산수학, **Java프로그래밍**, **HTML5웹프로그래밍**, 논술
 
 2학년 2학기: 철학, 대학수학의이해, **자료구조**, 선형대수, **프로그래밍언어론**, 경제
+
+<br><br>
 
 ## 🎨 회사 경험 ZARAHOME 매장 관리직
 
