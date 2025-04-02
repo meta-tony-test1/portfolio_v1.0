@@ -9,13 +9,11 @@
 
 # 🌐 meta-tony-test 1.0
 
-![image.png](imgReadMe/image%2028.png)
+![image.png](imgReadMe/image%2028.png) | ![image.png](imgReadMe/image%2029.png)
+--|--|
 
-![image.png](imgReadMe/image%2029.png)
-
-![image.png](imgReadMe/image%2030.png)
-
-![image.png](imgReadMe/image%2031.png)
+![image.png](imgReadMe/image%2030.png) | ![image.png](imgReadMe/image%2031.png)
+--|--|
 
 > [Project Link](https://tony96kimsh.github.io/portfolio_v1.0/portfolio.html)
 > 
@@ -43,14 +41,11 @@
 
 ## jQuery
 
----
-
 ### 영동군청  카피
 라이브러리 없이 jQuery를 통한 구현
 
-![image.png](imgReadMe/image%2035.png)
-
-![image.png](imgReadMe/image%2036.png)
+![image.png](imgReadMe/image%2035.png) | ![image.png](imgReadMe/image%2036.png)
+--|--|
 
 - jQuery 코드
     - 4단 반응형 구현
@@ -60,11 +55,8 @@
 ### KB은행 카피
 라이브러리 없이 jQuery를 통한 구현
 
-![image.png](imgReadMe/image%2037.png)
-
-![image.png](imgReadMe/image%2038.png)
-
-![image.png](imgReadMe/image%2039.png)
+![image.png](imgReadMe/image%2037.png) | ![image.png](imgReadMe/image%2038.png) | ![image.png](imgReadMe/image%2039.png)
+--|--|--|
 
 - PC, Mobile 반응형(적응형) 사이트 제작 - [link](https://tony96kimsh.github.io/portfolio_v1.0/list/mark-1.html)
 - jQuery 코드 - [Link](https://tony96kimsh.github.io/copy_KB_bank/js/script.js)
@@ -74,15 +66,10 @@
 
 ## 웹사이트 마크업, 디자인 (2개)
 
----
-
 ### 1. 🎨대성 홀딩스
 
-![image.png](imgReadMe/image%2040.png)
-
-![image.png](imgReadMe/image%2041.png)
-
-![image.png](imgReadMe/image%2042.png)
+![image.png](imgReadMe/image%2040.png) | ![image.png](imgReadMe/image%2041.png) | ![image.png](imgReadMe/image%2042.png)
+--|--|--|
 
 - 리뉴얼 사이트 링크 - [link](https://tony96kimsh.github.io/portfolio_v1.0/list/ds/index.html)
 - 디지인 및 구상 안내- [link](https://tony96kimsh.github.io/portfolio_v1.0/list/mark-4.html)
@@ -92,11 +79,8 @@
 
 ### 2. 🎨성형외과 웹 사이트 디자인 및 마크업
 
-![image.png](imgReadMe/image%2043.png)
-
-![image.png](imgReadMe/image%2044.png)
-
-![image.png](imgReadMe/image%2045.png)
+![image.png](imgReadMe/image%2043.png) | ![image.png](imgReadMe/image%2044.png) | ![image.png](imgReadMe/image%2045.png)
+--|--|--|
 
 - 제작 사이트 - [Link](https://tony96kimsh.github.io/portfolio_v1.0/list/hj/index.html)
 - 디자인 및 설명 안내 - [link](https://tony96kimsh.github.io/portfolio_v1.0/list/mark-5.html)
@@ -108,51 +92,43 @@
 
 ### 1. 화상영어 앱 디자인 “Hello! Langth”
 
-![image.png](imgReadMe/image%2046.png)
+![image.png](imgReadMe/image%2046.png) | ![image.png](imgReadMe/image%2047.png)
+--|--|
 
-![image.png](imgReadMe/image%2047.png)
-
-![image.png](imgReadMe/image%2048.png)
-
-![image.png](imgReadMe/image%2049.png)
+![image.png](imgReadMe/image%2048.png) | ![image.png](imgReadMe/image%2049.png) 
+--|--|
 
 - 제작 사이트 - [link](https://tony96kimsh.github.io/portfolio_v1.0/list/wd-1.html)
 
 ### 2. (팀 프로젝트 / 디자인담당) 반려식물 관리 앱 “목요일”
 
-![image.png](imgReadMe/image%2050.png)
+![image.png](imgReadMe/image%2050.png) | ![image.png](imgReadMe/image%2051.png)
+--|--|
 
-![image.png](imgReadMe/image%2051.png)
+![image.png](imgReadMe/image%2052.png) | ![image.png](imgReadMe/image%2053.png) | ![image.png](imgReadMe/image%2054.png)
+--|--|--|
 
-![image.png](imgReadMe/image%2052.png)
-
-![image.png](imgReadMe/image%2053.png)
-
-![image.png](imgReadMe/image%2054.png)
 
 - 제작 사이트 - [link](https://tony96kimsh.github.io/portfolio_v1.0/list/wd-2.html)
 
 ### 3. 가구 쇼핑몰 반응형 웹 디자인 “HI FURNITURE”
 
-![image.png](imgReadMe/image%2055.png)
+![image.png](imgReadMe/image%2055.png) | ![image.png](imgReadMe/image%2056.png)
+--|--|
 
-![image.png](imgReadMe/image%2056.png)
+![image.png](imgReadMe/image%2057.png) | ![image.png](imgReadMe/image%2058.png)
+--|--|
 
-![image.png](imgReadMe/image%2057.png)
-
-![image.png](imgReadMe/image%2058.png)
 
 - 제작 사이트 - [link](https://tony96kimsh.github.io/portfolio_v1.0/list/wd-3.html)
 
 ### 4. 스포츠 레저 PC 웹 디자인 “HT LTP”
 
-![hl-main.jpg](imgReadMe/hl-main.jpg)
+![hl-main.jpg](imgReadMe/hl-main.jpg) | ![2.jpg](imgReadMe/2.jpg)
+--|--|
 
-![2.jpg](imgReadMe/2.jpg)
-
-![3.jpg](imgReadMe/3.jpg)
-
-![image.png](imgReadMe/image%2059.png)
+![3.jpg](imgReadMe/3.jpg) | ![image.png](imgReadMe/image%2059.png)
+--|--|
 
 - 제작 사이트 - [link](https://tony96kimsh.github.io/portfolio_v1.0/list/wd-4.html)
 
