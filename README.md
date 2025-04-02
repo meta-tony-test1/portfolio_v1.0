@@ -26,8 +26,6 @@
 
 ## QA업무 23.05 - 24.01
 
-![image.png](imgReadMe/image%2032.png)
-
 ![image.png](imgReadMe/image%2033.png)
 
 ![image.png](imgReadMe/image%2034.png)
